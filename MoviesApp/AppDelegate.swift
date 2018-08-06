@@ -8,15 +8,19 @@
 
 import UIKit
 import CoreData
+import SwiftyBeaver
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //Setup SwiftyBeaver
+        let console = ConsoleDestination()
+        console.format = "$DHH:mm:ss$d $C$L$c $N.$F:$l - $M"
+        SwiftyBeaver.addDestination(console)
+        
         return true
     }
 
