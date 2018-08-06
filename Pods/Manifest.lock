@@ -1,3 +1,51 @@
-PODFILE CHECKSUM: 58984c6433e4872adbdaabb606ce4c69c5d55e35
+PODS:
+  - Action (3.6.0):
+    - RxCocoa (~> 4.2.0)
+    - RxSwift (~> 4.2.0)
+  - Alamofire (4.7.3)
+  - Kingfisher (4.8.0)
+  - Localize-Swift (2.0.0)
+  - NSObject+Rx (4.3.0):
+    - RxSwift (~> 4.0)
+  - ObjectMapper (3.3.0)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
+  - RxTest (4.2.0):
+    - RxSwift (~> 4.0)
+  - SwiftyBeaver (1.6.0)
+  - Swinject (2.4.1)
+  - SwinjectStoryboard (2.0.1):
+    - Swinject (~> 2.4)
+
+DEPENDENCIES:
+  - Action
+  - Alamofire
+  - Kingfisher
+  - Localize-Swift
+  - NSObject+Rx
+  - ObjectMapper
+  - RxCocoa
+  - RxSwift
+  - RxTest
+  - SwiftyBeaver
+  - Swinject
+  - SwinjectStoryboard
+
+SPEC CHECKSUMS:
+  Action: 3d9486d3da02b572b0a034b6c49ac4c3fbcc8b63
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
+  NSObject+Rx: 9a5eeff5e08156f849fa973514456f28eef08742
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  RxTest: 8da864c0ee47534f586ff18fb0c7e5b2f1fe5023
+  SwiftyBeaver: e45759613e50b522b0e6f53b1f0f14389b45ca34
+  Swinject: f7f15a9672e99328c1f07f277091087917215700
+  SwinjectStoryboard: ad2529218a1504cc888040ee56c13d7cb1cc7998
+
+PODFILE CHECKSUM: ae313ae773fe9153ee430a0c4f02bebe471e3bdb
 
 COCOAPODS: 1.4.0
