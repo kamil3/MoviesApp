@@ -137,6 +137,10 @@
 		4F9A80832118AB9100D53D33 /* MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
+				4FE3A44F211A14C1004800FB /* Services */,
+				4FE3A44E211A14BB004800FB /* Network */,
+				4FE3A44D211A14B5004800FB /* Utils */,
+				4FE3A44C211A14AF004800FB /* Model */,
 				4F78AAF52119BA8500EE262F /* TabBar */,
 				4F9A80842118AB9100D53D33 /* AppDelegate.swift */,
 				4F9A808E2118AB9400D53D33 /* Assets.xcassets */,
@@ -153,6 +157,34 @@
 				4F9A809E2118AB9400D53D33 /* Info.plist */,
 			);
 			path = MoviesAppTests;
+			sourceTree = "<group>";
+		};
+		4FE3A44C211A14AF004800FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4FE3A44D211A14B5004800FB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4FE3A44E211A14BB004800FB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4FE3A44F211A14C1004800FB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		620D922266643F555990331D /* Frameworks */ = {
