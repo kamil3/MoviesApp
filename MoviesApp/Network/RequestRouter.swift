@@ -7,12 +7,14 @@
 //
 
 import Alamofire
+import SwinjectStoryboard
 
 enum RequestRouter: URLRequestConvertible {
     case topRatedMovies
     case popularMovies
     
-    static let baseURLString = ""
+    static let baseURLString = SwinjectStoryboard.defaultContainer.resolve(AppConfig.self)!.baseURL
+    static let apiKey = SwinjectStoryboard.defaultContainer.resolve(AppConfig.self)!.apiKey
     
     var method: HTTPMethod {
         switch self {
@@ -36,7 +38,7 @@ enum RequestRouter: URLRequestConvertible {
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         
-        let fixedParameters: [String: Any] = ["language": Locale.current.languageCode ?? "en", "api_key": ""]
+        let fixedParameters: [String: Any] = ["language": Locale.current.languageCode ?? "en", "api_key": RequestRouter.apiKey]
 
         switch self {
             case .topRatedMovies, .popularMovies:

@@ -13,5 +13,12 @@ extension SwinjectStoryboard {
     @objc class func setup() {
         Container.loggingFunction = nil
         
+        //CORE COMPONENTS
+        
+        /* AppConfig */
+        defaultContainer.register(AppConfig.self) { r in
+            return AppConfig()
+        }
+        .inObjectScope(.container)
     }
 }
