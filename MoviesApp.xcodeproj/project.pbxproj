@@ -12,6 +12,8 @@
 		4F78AAF92119BAD400EE262F /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F78AAF82119BAD400EE262F /* MainTabBarController.storyboard */; };
 		4F78AAFC2119C1FE00EE262F /* TopRatedMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78AAFB2119C1FE00EE262F /* TopRatedMoviesViewController.swift */; };
 		4F78AAFE2119C21100EE262F /* TopRatedMoviesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F78AAFD2119C21100EE262F /* TopRatedMoviesViewController.storyboard */; };
+		4F78AB012119C2B000EE262F /* PopularMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78AB002119C2B000EE262F /* PopularMoviesViewController.swift */; };
+		4F78AB032119C2C600EE262F /* PopularMoviesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F78AB022119C2C600EE262F /* PopularMoviesViewController.storyboard */; };
 		4F9A80852118AB9100D53D33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A80842118AB9100D53D33 /* AppDelegate.swift */; };
 		4F9A808F2118AB9400D53D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A808E2118AB9400D53D33 /* Assets.xcassets */; };
 		4F9A80922118AB9400D53D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A80902118AB9400D53D33 /* LaunchScreen.storyboard */; };
@@ -35,6 +37,8 @@
 		4F78AAF82119BAD400EE262F /* MainTabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		4F78AAFB2119C1FE00EE262F /* TopRatedMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesViewController.swift; sourceTree = "<group>"; };
 		4F78AAFD2119C21100EE262F /* TopRatedMoviesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopRatedMoviesViewController.storyboard; sourceTree = "<group>"; };
+		4F78AB002119C2B000EE262F /* PopularMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewController.swift; sourceTree = "<group>"; };
+		4F78AB022119C2C600EE262F /* PopularMoviesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularMoviesViewController.storyboard; sourceTree = "<group>"; };
 		4F9A80812118AB9100D53D33 /* MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9A80842118AB9100D53D33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F9A808E2118AB9400D53D33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				4F78AAFA2119C19100EE262F /* TopRatedMovies */,
+				4F78AAFF2119C29C00EE262F /* PopularMovies */,
 				4F78AAF62119BABC00EE262F /* MainTabBarController.swift */,
 				4F78AAF82119BAD400EE262F /* MainTabBarController.storyboard */,
 			);
@@ -98,6 +103,15 @@
 				4F78AAFD2119C21100EE262F /* TopRatedMoviesViewController.storyboard */,
 			);
 			path = TopRatedMovies;
+			sourceTree = "<group>";
+		};
+		4F78AAFF2119C29C00EE262F /* PopularMovies */ = {
+			isa = PBXGroup;
+			children = (
+				4F78AB002119C2B000EE262F /* PopularMoviesViewController.swift */,
+				4F78AB022119C2C600EE262F /* PopularMoviesViewController.storyboard */,
+			);
+			path = PopularMovies;
 			sourceTree = "<group>";
 		};
 		4F9A80782118AB9100D53D33 = {
@@ -239,6 +253,7 @@
 			files = (
 				4F78AAF92119BAD400EE262F /* MainTabBarController.storyboard in Resources */,
 				4F9A80922118AB9400D53D33 /* LaunchScreen.storyboard in Resources */,
+				4F78AB032119C2C600EE262F /* PopularMoviesViewController.storyboard in Resources */,
 				4F9A808F2118AB9400D53D33 /* Assets.xcassets in Resources */,
 				4F78AAFE2119C21100EE262F /* TopRatedMoviesViewController.storyboard in Resources */,
 			);
@@ -388,6 +403,7 @@
 				4F78AAFC2119C1FE00EE262F /* TopRatedMoviesViewController.swift in Sources */,
 				4F78AAF72119BABC00EE262F /* MainTabBarController.swift in Sources */,
 				4F9A80852118AB9100D53D33 /* AppDelegate.swift in Sources */,
+				4F78AB012119C2B000EE262F /* PopularMoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
