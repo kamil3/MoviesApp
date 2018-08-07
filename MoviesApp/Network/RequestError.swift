@@ -12,6 +12,8 @@ import Localize_Swift
 enum RequestError: Error {
     // No Internet connection.
     case NotConnectedToInternet(description: String)
+    // Incorrect data returned.
+    case IncorrectDataReturned
     // Incorrect model mapping.
     case IncorrectModelMapping
     // Resource not found.
@@ -47,6 +49,8 @@ extension RequestError: LocalizedError {
             text = "error.unknown".localized()
         case .NotConnectedToInternet(let description):
             text = description
+        case .IncorrectDataReturned:
+            text = "error.incorrect.data".localized()
         case .IncorrectModelMapping:
             text = "error.incorrect.mapping".localized()
         case .ResourceNotFound:
