@@ -20,6 +20,7 @@
 		4F9A809D2118AB9400D53D33 /* MoviesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A809C2118AB9400D53D33 /* MoviesAppTests.swift */; };
 		4FE3A451211A150C004800FB /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A450211A150C004800FB /* SwinjectStoryboard+Setup.swift */; };
 		4FE3A453211A161B004800FB /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A452211A161B004800FB /* AppConfig.swift */; };
+		4FE3A455211A1915004800FB /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A454211A1915004800FB /* ApiClient.swift */; };
 		4FE3A457211A19A8004800FB /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A456211A19A8004800FB /* RequestRouter.swift */; };
 		4FE3A459211A1F8B004800FB /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A458211A1F8B004800FB /* RequestError.swift */; };
 		4FE3A45B211A2AC9004800FB /* MappingDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A45A211A2AC9004800FB /* MappingDataObject.swift */; };
@@ -54,6 +55,7 @@
 		4F9A809E2118AB9400D53D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FE3A450211A150C004800FB /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		4FE3A452211A161B004800FB /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		4FE3A454211A1915004800FB /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		4FE3A456211A19A8004800FB /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
 		4FE3A458211A1F8B004800FB /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		4FE3A45A211A2AC9004800FB /* MappingDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingDataObject.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		4FE3A44E211A14BB004800FB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4FE3A454211A1915004800FB /* ApiClient.swift */,
 				4FE3A452211A161B004800FB /* AppConfig.swift */,
 				4FE3A45A211A2AC9004800FB /* MappingDataObject.swift */,
 				4FE3A458211A1F8B004800FB /* RequestError.swift */,
@@ -448,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE3A457211A19A8004800FB /* RequestRouter.swift in Sources */,
+				4FE3A455211A1915004800FB /* ApiClient.swift in Sources */,
 				4F78AAFC2119C1FE00EE262F /* TopRatedMoviesViewController.swift in Sources */,
 				4FE3A45B211A2AC9004800FB /* MappingDataObject.swift in Sources */,
 				4FE3A451211A150C004800FB /* SwinjectStoryboard+Setup.swift in Sources */,
