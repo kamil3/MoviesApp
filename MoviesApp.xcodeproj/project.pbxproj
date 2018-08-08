@@ -18,6 +18,8 @@
 		4F9A808F2118AB9400D53D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A808E2118AB9400D53D33 /* Assets.xcassets */; };
 		4F9A80922118AB9400D53D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9A80902118AB9400D53D33 /* LaunchScreen.storyboard */; };
 		4F9A809D2118AB9400D53D33 /* MoviesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9A809C2118AB9400D53D33 /* MoviesAppTests.swift */; };
+		4FB6E70C211ADB7D003585B8 /* PopularMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB6E70B211ADB7D003585B8 /* PopularMoviesViewModel.swift */; };
+		4FB6E70E211ADB96003585B8 /* TopRatedMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB6E70D211ADB96003585B8 /* TopRatedMoviesViewModel.swift */; };
 		4FE3A451211A150C004800FB /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A450211A150C004800FB /* SwinjectStoryboard+Setup.swift */; };
 		4FE3A453211A161B004800FB /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A452211A161B004800FB /* AppConfig.swift */; };
 		4FE3A455211A1915004800FB /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A454211A1915004800FB /* ApiClient.swift */; };
@@ -53,6 +55,8 @@
 		4F9A80982118AB9400D53D33 /* MoviesAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9A809C2118AB9400D53D33 /* MoviesAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAppTests.swift; sourceTree = "<group>"; };
 		4F9A809E2118AB9400D53D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FB6E70B211ADB7D003585B8 /* PopularMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewModel.swift; sourceTree = "<group>"; };
+		4FB6E70D211ADB96003585B8 /* TopRatedMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesViewModel.swift; sourceTree = "<group>"; };
 		4FE3A450211A150C004800FB /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		4FE3A452211A161B004800FB /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		4FE3A454211A1915004800FB /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				4F78AAFB2119C1FE00EE262F /* TopRatedMoviesViewController.swift */,
+				4FB6E70D211ADB96003585B8 /* TopRatedMoviesViewModel.swift */,
 				4F78AAFD2119C21100EE262F /* TopRatedMoviesViewController.storyboard */,
 			);
 			path = TopRatedMovies;
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				4F78AB002119C2B000EE262F /* PopularMoviesViewController.swift */,
+				4FB6E70B211ADB7D003585B8 /* PopularMoviesViewModel.swift */,
 				4F78AB022119C2C600EE262F /* PopularMoviesViewController.storyboard */,
 			);
 			path = PopularMovies;
@@ -453,8 +459,10 @@
 				4FE3A457211A19A8004800FB /* RequestRouter.swift in Sources */,
 				4FE3A455211A1915004800FB /* ApiClient.swift in Sources */,
 				4F78AAFC2119C1FE00EE262F /* TopRatedMoviesViewController.swift in Sources */,
+				4FB6E70C211ADB7D003585B8 /* PopularMoviesViewModel.swift in Sources */,
 				4FE3A45B211A2AC9004800FB /* MappingDataObject.swift in Sources */,
 				4FE3A451211A150C004800FB /* SwinjectStoryboard+Setup.swift in Sources */,
+				4FB6E70E211ADB96003585B8 /* TopRatedMoviesViewModel.swift in Sources */,
 				4F78AAF72119BABC00EE262F /* MainTabBarController.swift in Sources */,
 				4FE3A453211A161B004800FB /* AppConfig.swift in Sources */,
 				4F9A80852118AB9100D53D33 /* AppDelegate.swift in Sources */,
