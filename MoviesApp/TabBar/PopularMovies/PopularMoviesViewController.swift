@@ -10,13 +10,23 @@ import UIKit
 
 class PopularMoviesViewController: UIViewController {
     
+    // MARK:- Outlets
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK:- Properties
     var viewModel: PopularMoviesViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
+    }
+    
+    func setupUI() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
+        tableView.tableFooterView = UIView()
+        tableView.register(PopularMovieTableViewCell.self)
     }
 
 }

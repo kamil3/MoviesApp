@@ -18,3 +18,5 @@ class PopularMovieTableViewCell: UITableViewCell {
     }
     
 }
+
+extension PopularMovieTableViewCell: NibLoadableView {}

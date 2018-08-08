@@ -16,14 +16,29 @@
                     <view key="view" contentMode="scaleToFill" id="OLP-r8-g1s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rYb-zX-4QV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rYb-zX-4QV" firstAttribute="leading" secondItem="gpU-JG-oi0" secondAttribute="leading" id="CxS-kt-wIW"/>
+                            <constraint firstItem="rYb-zX-4QV" firstAttribute="top" secondItem="gpU-JG-oi0" secondAttribute="top" id="L58-KP-dH6"/>
+                            <constraint firstItem="rYb-zX-4QV" firstAttribute="trailing" secondItem="gpU-JG-oi0" secondAttribute="trailing" id="MeL-Sx-0p2"/>
+                            <constraint firstItem="rYb-zX-4QV" firstAttribute="bottom" secondItem="gpU-JG-oi0" secondAttribute="bottom" id="uyX-SY-MpR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gpU-JG-oi0"/>
                     </view>
                     <navigationItem key="navigationItem" id="7bn-MW-pee"/>
+                    <connections>
+                        <outlet property="tableView" destination="rYb-zX-4QV" id="VEc-Fk-17f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o77-Yp-pgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="167"/>
+            <point key="canvasLocation" x="1013.6" y="166.8665667166417"/>
         </scene>
         <!--Popular-->
         <scene sceneID="KYU-JQ-7uZ">
