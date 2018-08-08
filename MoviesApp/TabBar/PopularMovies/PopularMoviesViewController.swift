@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 class PopularMoviesViewController: UIViewController {
     
@@ -15,18 +18,30 @@ class PopularMoviesViewController: UIViewController {
     
     // MARK:- Properties
     var viewModel: PopularMoviesViewModel!
-
+    
+    // MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        setupBindings()
     }
     
-    func setupUI() {
+    // MARK:- Private
+    private func setupUI() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         tableView.tableFooterView = UIView()
         tableView.register(PopularMovieTableViewCell.self)
     }
 
+    private func setupBindings() {
+        viewModel
+            .popularMovies
+            .observeOn(MainScheduler.instance)
+            .bind(to: tableView.rx.items(cellIdentifier: PopularMovieTableViewCell.reuseIdentifier, cellType: PopularMovieTableViewCell.self))  { (_, movie, cell) in
+                cell.update(with: movie)
+            }
+            .disposed(by: rx.disposeBag)
+    }
 }
