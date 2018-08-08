@@ -41,5 +41,25 @@ extension SwinjectStoryboard {
             return MovieService(with: r.resolve(ApiClientProtocol.self)!)
         }
         .inObjectScope(.container)
+        
+        //VIEW CONTROLLERS + VIEW MODELS
+        
+        /* TopRatedMovies */
+        defaultContainer.storyboardInitCompleted(TopRatedMoviesViewController.self) { r, c in
+            c.viewModel = r.resolve(TopRatedMoviesViewModel.self)
+        }
+        
+        defaultContainer.register(TopRatedMoviesViewModel.self) { r in
+            return TopRatedMoviesViewModel(with: r.resolve(AppDependency.self)!)
+        }
+        
+        /* PopularMovies */
+        defaultContainer.storyboardInitCompleted(PopularMoviesViewController.self) { r, c in
+            c.viewModel = r.resolve(PopularMoviesViewModel.self)
+        }
+        
+        defaultContainer.register(PopularMoviesViewModel.self) { r in
+            return PopularMoviesViewModel(with: r.resolve(AppDependency.self)!)
+        }
     }
 }

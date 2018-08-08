@@ -9,6 +9,9 @@
 import UIKit
 
 class TopRatedMoviesViewController: UIViewController {
+    
+    // MARK:- Properties
+    var viewModel: TopRatedMoviesViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
