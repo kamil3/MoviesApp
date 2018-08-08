@@ -26,6 +26,9 @@
 		4FB6E716211AF79F003585B8 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB6E715211AF79F003585B8 /* AppDependency.swift */; };
 		4FB6E71A211B1D7A003585B8 /* PopularMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB6E718211B1D7A003585B8 /* PopularMovieTableViewCell.swift */; };
 		4FB6E71B211B1D7A003585B8 /* PopularMovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB6E719211B1D7A003585B8 /* PopularMovieTableViewCell.xib */; };
+		4FB6E71E211B5728003585B8 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB6E71D211B5728003585B8 /* ReusableView.swift */; };
+		4FB6E720211B5737003585B8 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB6E71F211B5737003585B8 /* NibLoadableView.swift */; };
+		4FB6E722211B5798003585B8 /* UITableViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB6E721211B5798003585B8 /* UITableViewUtils.swift */; };
 		4FE3A451211A150C004800FB /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A450211A150C004800FB /* SwinjectStoryboard+Setup.swift */; };
 		4FE3A453211A161B004800FB /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A452211A161B004800FB /* AppConfig.swift */; };
 		4FE3A455211A1915004800FB /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE3A454211A1915004800FB /* ApiClient.swift */; };
@@ -69,6 +72,9 @@
 		4FB6E715211AF79F003585B8 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		4FB6E718211B1D7A003585B8 /* PopularMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieTableViewCell.swift; sourceTree = "<group>"; };
 		4FB6E719211B1D7A003585B8 /* PopularMovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMovieTableViewCell.xib; sourceTree = "<group>"; };
+		4FB6E71D211B5728003585B8 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		4FB6E71F211B5737003585B8 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		4FB6E721211B5798003585B8 /* UITableViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewUtils.swift; sourceTree = "<group>"; };
 		4FE3A450211A150C004800FB /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		4FE3A452211A161B004800FB /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		4FE3A454211A1915004800FB /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 			children = (
 				4FE3A44F211A14C1004800FB /* Services */,
 				4FE3A44E211A14BB004800FB /* Network */,
+				4FB6E71C211B5716003585B8 /* Protocols */,
 				4FE3A44D211A14B5004800FB /* Utils */,
 				4FE3A44C211A14AF004800FB /* Model */,
 				4F78AAF52119BA8500EE262F /* TabBar */,
@@ -200,6 +207,15 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		4FB6E71C211B5716003585B8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4FB6E71F211B5737003585B8 /* NibLoadableView.swift */,
+				4FB6E71D211B5728003585B8 /* ReusableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		4FE3A44C211A14AF004800FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +228,7 @@
 		4FE3A44D211A14B5004800FB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4FB6E721211B5798003585B8 /* UITableViewUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -492,14 +509,17 @@
 				4FB6E70E211ADB96003585B8 /* TopRatedMoviesViewModel.swift in Sources */,
 				4F78AAF72119BABC00EE262F /* MainTabBarController.swift in Sources */,
 				4FB6E712211AF4E4003585B8 /* PaginatedMovie.swift in Sources */,
+				4FB6E71E211B5728003585B8 /* ReusableView.swift in Sources */,
 				4FB6E714211AF64C003585B8 /* MovieService.swift in Sources */,
 				4FB6E71A211B1D7A003585B8 /* PopularMovieTableViewCell.swift in Sources */,
 				4FB6E711211AF4E4003585B8 /* Movie.swift in Sources */,
 				4FE3A453211A161B004800FB /* AppConfig.swift in Sources */,
+				4FB6E720211B5737003585B8 /* NibLoadableView.swift in Sources */,
 				4F9A80852118AB9100D53D33 /* AppDelegate.swift in Sources */,
 				4F78AB012119C2B000EE262F /* PopularMoviesViewController.swift in Sources */,
 				4FB6E716211AF79F003585B8 /* AppDependency.swift in Sources */,
 				4FE3A459211A1F8B004800FB /* RequestError.swift in Sources */,
+				4FB6E722211B5798003585B8 /* UITableViewUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
