@@ -26,9 +26,9 @@ enum RequestRouter: URLRequestConvertible {
     var path: String {
         switch self {
         case .topRatedMovies:
-            return "top_rated"
+            return "movie/top_rated"
         case .popularMovies:
-            return "popular"
+            return "movie/popular"
         }
     }
     
