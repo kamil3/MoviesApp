@@ -6,11 +6,29 @@
 //  Copyright © 2018 kamil. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
+
 struct PopularMoviesViewModel {
     typealias Dependencies = HasMovieServiceProtocol
-    let dependencies: Dependencies
     
+    // MARK:- Outputs
+    let popularMovies: Observable<[Movie]>
+    let alertMessage: Observable<Error>
+    
+    // MARK:- Init
     init(with dependencies: Dependencies) {
-        self.dependencies = dependencies
+        let _alertMessage = PublishSubject<Error>()
+        self.alertMessage = _alertMessage.asObservable()
+        
+        //Retrieve movies from first page only (pagination is not used)
+        self.popularMovies = dependencies.movieService.popularMovies()
+            .flatMap { paginatedMovie -> Observable<[Movie]> in
+                return Observable.of(paginatedMovie.results ?? [])
+            }
+            .catchError { error in
+                _alertMessage.onNext(error)
+                return Observable.just([])
+            }
     }
 }
