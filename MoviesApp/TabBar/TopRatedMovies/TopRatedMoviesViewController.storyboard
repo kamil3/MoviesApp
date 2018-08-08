@@ -25,11 +25,13 @@
             </objects>
             <point key="canvasLocation" x="1015" y="175"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Top Rated-->
         <scene sceneID="yS7-pY-EoD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iqh-sZ-cbQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Top Rated" image="top_rated" selectedImage="top_rated" id="qQ9-dH-DjC"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yMR-S1-wmq">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -44,4 +46,7 @@
             <point key="canvasLocation" x="140" y="174.96251874062969"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="top_rated" width="25" height="25"/>
+    </resources>
 </document>

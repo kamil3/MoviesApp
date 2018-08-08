@@ -30,7 +30,7 @@
         <scene sceneID="fX5-sK-dOA">
             <objects>
                 <viewControllerPlaceholder storyboardName="TopRatedMoviesViewController" id="HMf-dM-876" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ktc-Qy-jlQ"/>
+                    <tabBarItem key="tabBarItem" title="Top Rated" image="top_rated" selectedImage="top_rated" id="Ktc-Qy-jlQ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7H-rb-HHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,11 +40,15 @@
         <scene sceneID="V8K-rw-xLZ">
             <objects>
                 <viewControllerPlaceholder storyboardName="PopularMoviesViewController" id="7yM-gE-ijO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9P3-aB-la7"/>
+                    <tabBarItem key="tabBarItem" title="Popular" image="popular" selectedImage="popular" id="9P3-aB-la7"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GP0-Yp-7KO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="214" y="219"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="popular" width="25" height="25"/>
+        <image name="top_rated" width="25" height="25"/>
+    </resources>
 </document>
