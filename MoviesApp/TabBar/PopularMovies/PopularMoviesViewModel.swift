@@ -7,5 +7,10 @@
 //
 
 struct PopularMoviesViewModel {
+    typealias Dependencies = HasMovieServiceProtocol
+    let dependencies: Dependencies
     
+    init(with dependencies: Dependencies) {
+        self.dependencies = dependencies
+    }
 }
