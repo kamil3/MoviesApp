@@ -46,6 +46,7 @@ public struct Movie: Mappable {
   public var tagline: String?
   public var homepage: String?
   public var adult: Bool? = false
+  public var alternativeTitles = [AlternativeTitle]()
 
   // MARK: ObjectMapper Initializers
   /// Map a JSON object to this class using ObjectMapper.

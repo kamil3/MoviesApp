@@ -15,6 +15,8 @@ class PopularMovieTableViewCell: UITableViewCell {
     
     func update(with movie: Movie) {
         movieTitleLabel.text = movie.title
+        alternativeTitlesCountLabel.text = String(movie.alternativeTitles.count)
+        accessoryType = movie.alternativeTitles.count > 0 ? .disclosureIndicator : .none
     }
     
 }
