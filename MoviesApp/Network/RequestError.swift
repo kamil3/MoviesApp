@@ -20,6 +20,8 @@ enum RequestError: Error {
     case ResourceNotFound
     // Unauthorized.
     case Unauthorized
+    // Requests limit exceeded.
+    case LimitExceeded
     // Unknown server error.
     case UnknownServerResponse
     // Not supported error.
@@ -31,6 +33,8 @@ enum RequestError: Error {
             self = .Unauthorized
         case 404:
             self = .ResourceNotFound
+        case 429:
+            self = .LimitExceeded
         case 500:
             self = .UnknownServerResponse
         case NSURLErrorNotConnectedToInternet:
@@ -57,6 +61,8 @@ extension RequestError: LocalizedError {
             text = "error.resource.not.found".localized()
         case .Unauthorized:
             text = "error.unauthorized".localized()
+        case .LimitExceeded:
+            text = "error.limit.exceeded".localized()
         case .Unsupported(let description):
             text = description
         }
