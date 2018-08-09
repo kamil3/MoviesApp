@@ -12,13 +12,14 @@ import SwinjectStoryboard
 enum RequestRouter: URLRequestConvertible {
     case topRatedMovies
     case popularMovies
+    case alternativeTitles(movieId: String)
     
     static let baseURLString = SwinjectStoryboard.defaultContainer.resolve(AppConfig.self)!.baseURL
     static let apiKey = SwinjectStoryboard.defaultContainer.resolve(AppConfig.self)!.apiKey
     
     var method: HTTPMethod {
         switch self {
-        case .topRatedMovies, .popularMovies:
+        case .topRatedMovies, .popularMovies, .alternativeTitles:
             return .get
         }
     }
@@ -29,6 +30,8 @@ enum RequestRouter: URLRequestConvertible {
             return "movie/top_rated"
         case .popularMovies:
             return "movie/popular"
+        case .alternativeTitles(let movieId):
+            return "movie/\(movieId)/alternative_titles"
         }
     }
     
@@ -41,7 +44,7 @@ enum RequestRouter: URLRequestConvertible {
         let fixedParameters: [String: Any] = ["language": Locale.current.languageCode ?? "en", "api_key": RequestRouter.apiKey]
 
         switch self {
-            case .topRatedMovies, .popularMovies:
+            case .topRatedMovies, .popularMovies, .alternativeTitles:
                 urlRequest = try URLEncoding.default.encode(urlRequest, with: fixedParameters)
         }
         

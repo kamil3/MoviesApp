@@ -11,6 +11,7 @@ import RxSwift
 protocol MovieServiceProtocol {
     func topRatedMovies() -> Observable<PaginatedMovie>
     func popularMovies() -> Observable<PaginatedMovie>
+    func alternativeMovieTitles(withMovieId movieId: String) -> Observable<AlternativeMovieTitle>
 }
 
 struct MovieService: MovieServiceProtocol {
@@ -28,6 +29,11 @@ struct MovieService: MovieServiceProtocol {
     
     func popularMovies() -> Observable<PaginatedMovie> {
         let requestRoute = RequestRouter.popularMovies
+        return apiClient.convenientRequest(for: requestRoute)
+    }
+    
+    func alternativeMovieTitles(withMovieId movieId: String) -> Observable<AlternativeMovieTitle> {
+        let requestRoute = RequestRouter.alternativeTitles(movieId: movieId)
         return apiClient.convenientRequest(for: requestRoute)
     }
 }
