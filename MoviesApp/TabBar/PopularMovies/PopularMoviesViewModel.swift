@@ -23,8 +23,8 @@ struct PopularMoviesViewModel {
         
         //Retrieve movies from first page only (pagination is not used)
         self.popularMovies = dependencies.movieService.popularMovies()
-            .flatMap { paginatedMovie -> Observable<[Movie]> in
-                return Observable.of(paginatedMovie.results ?? [])
+            .map { paginatedMovie -> [Movie] in
+                return paginatedMovie.results ?? []
             }
             .catchError { error in
                 _alertMessage.onNext(error)
