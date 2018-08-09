@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import SwiftyBeaver
+import AlamofireNetworkActivityLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        #if DEBUG
+            NetworkActivityLogger.shared.level = .debug
+            NetworkActivityLogger.shared.startLogging()
+        #endif
+        
         //Setup SwiftyBeaver
         let console = ConsoleDestination()
         console.format = "$DHH:mm:ss$d $C$L$c $N.$F:$l - $M"

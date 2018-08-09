@@ -6,6 +6,7 @@ inhibit_all_warnings!
 
 def shared_pods
     pod 'Alamofire'
+    pod 'AlamofireNetworkActivityLogger'
     pod 'Swinject'
     pod 'SwinjectStoryboard'
     pod 'ObjectMapper'
