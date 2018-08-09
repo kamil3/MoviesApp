@@ -57,8 +57,8 @@ struct ApiClient: ApiClientProtocol {
     
     // MARK:- Private
     private func data(for requestRoute: RequestRouter) -> Observable<Data> {
-        let request = sessionManager.request(requestRoute).validate()
         return Observable.create({ observable in
+            let request = self.sessionManager.request(requestRoute).validate()
             request.responseJSON { response in
                 switch response.result {
                 case .success:
