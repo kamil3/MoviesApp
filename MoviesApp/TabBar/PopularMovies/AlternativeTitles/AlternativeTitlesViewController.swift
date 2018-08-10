@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 class AlternativeTitlesViewController: UIViewController {
 
+    // MARK:- Outlets
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK:- Properties
     var viewModel: AlternativeTitlesViewModel!
     
@@ -17,11 +23,29 @@ class AlternativeTitlesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
+        setupBindings()
     }
     
     deinit {
-        print("DEALLOC ---- \(self.className)")
+        print("DEALLOC ---- \(className)")
+    }
+    
+    // MARK:- Private
+    private func setupUI() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
+        tableView.tableFooterView = UIView()
+        tableView.register(AlternativeTitleTableViewCell.self)
+    }
+    
+    private func setupBindings() {
+        viewModel
+            .alternativeTitles
+            .bind(to: tableView.rx.items(cellIdentifier: AlternativeTitleTableViewCell.reuseIdentifier, cellType: AlternativeTitleTableViewCell.self))  { (_, alternativeTitle, cell) in
+                cell.update(with: alternativeTitle)
+            }
+            .disposed(by: rx.disposeBag)
     }
 
 }

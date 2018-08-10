@@ -7,8 +7,9 @@
 //
 
 import RxSwift
+import RxCocoa
 
 struct AlternativeTitlesViewModel {
     
-    let alternativeTitles = Variable<[AlternativeTitle]>([])
+    let alternativeTitles = BehaviorRelay<[AlternativeTitle]>(value: [])
 }
