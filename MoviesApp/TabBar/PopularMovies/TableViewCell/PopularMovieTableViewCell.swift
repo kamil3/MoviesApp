@@ -17,6 +17,7 @@ class PopularMovieTableViewCell: UITableViewCell {
         movieTitleLabel.text = movie.title
         alternativeTitlesCountLabel.text = String(movie.alternativeTitles.count)
         accessoryType = movie.alternativeTitles.count > 0 ? .disclosureIndicator : .none
+        selectionStyle = movie.alternativeTitles.count > 0 ? .default : .none
     }
     
 }
