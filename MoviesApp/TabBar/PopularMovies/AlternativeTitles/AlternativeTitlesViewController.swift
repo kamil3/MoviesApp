@@ -19,5 +19,9 @@ class AlternativeTitlesViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    deinit {
+        print("DEALLOC ---- \(self.className)")
+    }
 
 }
