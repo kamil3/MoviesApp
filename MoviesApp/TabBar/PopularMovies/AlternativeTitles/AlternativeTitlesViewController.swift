@@ -10,6 +10,9 @@ import UIKit
 
 class AlternativeTitlesViewController: UIViewController {
 
+    // MARK:- Properties
+    var viewModel: AlternativeTitlesViewModel!
+    
     // MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

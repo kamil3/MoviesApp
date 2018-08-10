@@ -34,13 +34,11 @@ extension SwinjectStoryboard {
             let sessionManager = SessionManager(configuration: configuration)
             return ApiClient(sessionManager: sessionManager)
         }
-        .inObjectScope(.container)
         
         /* MovieService */
         defaultContainer.register(MovieServiceProtocol.self) { r in
             return MovieService(with: r.resolve(ApiClientProtocol.self)!)
         }
-        .inObjectScope(.container)
         
         //VIEW CONTROLLERS + VIEW MODELS
         
@@ -60,6 +58,15 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(PopularMoviesViewModel.self) { r in
             return PopularMoviesViewModel(with: r.resolve(AppDependency.self)!)
+        }
+        
+        /* AlternativeTitles */
+        defaultContainer.storyboardInitCompleted(AlternativeTitlesViewController.self) { r, c in
+            c.viewModel = r.resolve(AlternativeTitlesViewModel.self)
+        }
+        
+        defaultContainer.register(AlternativeTitlesViewModel.self) { r in
+            return AlternativeTitlesViewModel()
         }
     }
 }
