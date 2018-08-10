@@ -12,6 +12,8 @@
 		4F6529BE211D797E00E99017 /* AlternativeTitlesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */; };
 		4F6529C0211D799D00E99017 /* AlternativeTitlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */; };
 		4F6529C2211D878600E99017 /* NSObjectUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529C1211D878600E99017 /* NSObjectUtils.swift */; };
+		4F6529C4211D882900E99017 /* StoryboardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529C3211D882900E99017 /* StoryboardUtils.swift */; };
+		4F6529C6211D88AE00E99017 /* ViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529C5211D88AE00E99017 /* ViewControllerUtils.swift */; };
 		4F78AAF72119BABC00EE262F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78AAF62119BABC00EE262F /* MainTabBarController.swift */; };
 		4F78AAF92119BAD400EE262F /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F78AAF82119BAD400EE262F /* MainTabBarController.storyboard */; };
 		4F78AAFC2119C1FE00EE262F /* TopRatedMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78AAFB2119C1FE00EE262F /* TopRatedMoviesViewController.swift */; };
@@ -60,6 +62,8 @@
 		4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlternativeTitlesViewController.storyboard; sourceTree = "<group>"; };
 		4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeTitlesViewModel.swift; sourceTree = "<group>"; };
 		4F6529C1211D878600E99017 /* NSObjectUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectUtils.swift; sourceTree = "<group>"; };
+		4F6529C3211D882900E99017 /* StoryboardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardUtils.swift; sourceTree = "<group>"; };
+		4F6529C5211D88AE00E99017 /* ViewControllerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtils.swift; sourceTree = "<group>"; };
 		4F78AAF62119BABC00EE262F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4F78AAF82119BAD400EE262F /* MainTabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		4F78AAFB2119C1FE00EE262F /* TopRatedMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +259,8 @@
 			children = (
 				4F6529C1211D878600E99017 /* NSObjectUtils.swift */,
 				4FB6E721211B5798003585B8 /* UITableViewUtils.swift */,
+				4F6529C3211D882900E99017 /* StoryboardUtils.swift */,
+				4F6529C5211D88AE00E99017 /* ViewControllerUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -543,6 +549,7 @@
 				4F6529BC211D795600E99017 /* AlternativeTitlesViewController.swift in Sources */,
 				4FB6E714211AF64C003585B8 /* MovieService.swift in Sources */,
 				4F6529C2211D878600E99017 /* NSObjectUtils.swift in Sources */,
+				4F6529C4211D882900E99017 /* StoryboardUtils.swift in Sources */,
 				4FB6E71A211B1D7A003585B8 /* PopularMovieTableViewCell.swift in Sources */,
 				4FB6E711211AF4E4003585B8 /* Movie.swift in Sources */,
 				4FE3A453211A161B004800FB /* AppConfig.swift in Sources */,
@@ -554,6 +561,7 @@
 				4FE3A459211A1F8B004800FB /* RequestError.swift in Sources */,
 				4FBA2A09211C3FB00046398A /* AlternativeTitle.swift in Sources */,
 				4FB6E722211B5798003585B8 /* UITableViewUtils.swift in Sources */,
+				4F6529C6211D88AE00E99017 /* ViewControllerUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
