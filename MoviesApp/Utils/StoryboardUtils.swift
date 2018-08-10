@@ -9,6 +9,12 @@
 import UIKit
 
 extension UIStoryboard {
+    static func alternativeTitlesViewControllerStoryboard() -> UIStoryboard {
+        return UIStoryboard.init(name: "AlternativeTitlesViewController", bundle: nil)
+    }
+}
+
+extension UIStoryboard {
     func instantiateViewControllerOfType<ViewController: UIViewController>(_: ViewController.Type) -> ViewController {
         guard let viewController = instantiateViewController(withIdentifier: ViewController.storyboardIdentifier) as? ViewController else {
             fatalError("Could not instantiate view controller with identifier: \(ViewController.storyboardIdentifier)")

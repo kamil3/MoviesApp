@@ -43,5 +43,21 @@ class PopularMoviesViewController: UIViewController {
                 cell.update(with: movie)
             }
             .disposed(by: rx.disposeBag)
+        
+        tableView.rx.modelSelected(Movie.self)
+            .subscribe(onNext: { [weak self] movie in
+                let alternativeTitlesViewController = UIStoryboard.alternativeTitlesViewControllerStoryboard().instantiateInitialViewControllerOfType(AlternativeTitlesViewController.self) as AlternativeTitlesViewController
+                alternativeTitlesViewController.title = movie.title
+                alternativeTitlesViewController.viewModel.alternativeTitles.value = movie.alternativeTitles
+                self?.navigationController?.pushViewController(alternativeTitlesViewController, animated: true)
+            })
+            .disposed(by: rx.disposeBag)
+        
+        tableView.rx.itemSelected
+            .do(onNext: { [unowned self] indexPath in
+                self.tableView.deselectRow(at: indexPath, animated: false)
+            })
+            .subscribe()
+            .disposed(by: rx.disposeBag)
     }
 }

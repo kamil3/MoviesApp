@@ -6,6 +6,9 @@
 //  Copyright © 2018 kamil. All rights reserved.
 //
 
+import RxSwift
+
 struct AlternativeTitlesViewModel {
     
+    let alternativeTitles = Variable<[AlternativeTitle]>([])
 }
