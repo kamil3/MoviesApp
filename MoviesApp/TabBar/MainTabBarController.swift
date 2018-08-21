@@ -10,10 +10,18 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
+    // MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupTranslations()
+    }
+    
+    // MARK:- Private
+    private func setupTranslations() {
+        let topRatedMoviesNavController = viewControllers?[0] as! UINavigationController
+        topRatedMoviesNavController.tabBarItem.title = "tab.bar.item.0".localized()
+        let popularMoviesNavController = viewControllers?[1] as! UINavigationController
+        popularMoviesNavController.tabBarItem.title = "tab.bar.item.1".localized()
     }
 
 }

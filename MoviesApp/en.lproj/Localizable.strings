@@ -14,3 +14,7 @@
 "error.resource.not.found" = "Response status code was unacceptable: 404";
 "error.unauthorized" = "No authorization";
 "error.limit.exceeded" = "Query limit exceeded. Please wait a moment";
+
+/* TAB BAR */
+"tab.bar.item.0" = "Top Rated";
+"tab.bar.item.1" = "Popular";

@@ -14,3 +14,7 @@
 "error.resource.not.found" = "Nie znaleziono żądanego zasobu: 404";
 "error.unauthorized" = "Brak autoryzacji";
 "error.limit.exceeded" = "Przekroczony limit zapytań. Proszę chwilę odczekać.";
+
+/* TAB BAR */
+"tab.bar.item.0" = "Topowe";
+"tab.bar.item.1" = "Popularne";
