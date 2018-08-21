@@ -24,6 +24,8 @@ class PopularMoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.rx.setDelegate(self)
+            .disposed(by: rx.disposeBag)
         setupUI()
         setupBindings()
     }
@@ -35,8 +37,6 @@ class PopularMoviesViewController: UIViewController {
         tableView.estimatedRowHeight = 150
         tableView.tableFooterView = UIView()
         tableView.register(PopularMovieTableViewCell.self)
-        tableView.rx.setDelegate(self)
-            .disposed(by: rx.disposeBag)
     }
 
     private func setupBindings() {
@@ -70,6 +70,7 @@ class PopularMoviesViewController: UIViewController {
     }
 }
 
+// MARK:- UITableViewDelegate
 extension PopularMoviesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return movies.value[indexPath.row].alternativeTitles.count > 0 ? indexPath : nil
