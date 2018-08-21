@@ -67,6 +67,19 @@ class PopularMoviesViewController: UIViewController {
             })
             .subscribe()
             .disposed(by: rx.disposeBag)
+        
+        viewModel
+            .alertMessage
+            .observeOn(MainScheduler.instance)
+            .flatMap { [weak self] error -> Observable<Void> in
+                guard let strongSelf = self else { return Observable.empty() }
+                return strongSelf.alertSignal(title: "Error", message: error.localizedDescription)
+                                 .take(3.0, scheduler: MainScheduler.instance)
+            }
+            .subscribe(onDisposed: { [weak self] in
+                self?.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: rx.disposeBag)
     }
 }
 

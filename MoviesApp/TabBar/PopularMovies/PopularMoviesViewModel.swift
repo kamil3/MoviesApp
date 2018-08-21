@@ -26,7 +26,7 @@ struct PopularMoviesViewModel {
             .map { paginatedMovie -> [Movie] in
                 return paginatedMovie.results ?? []
             }
-            .share(replay: 1, scope: .whileConnected)
+            .share(replay: 1, scope: .forever)
         
         let fetchedAlternativeMovieTitles = _popularMovies.flatMap { movies -> Observable<Observable<AlternativeMovieTitle>> in
             let movieTitlesObservableArray = movies.map { movie -> Observable<AlternativeMovieTitle> in
