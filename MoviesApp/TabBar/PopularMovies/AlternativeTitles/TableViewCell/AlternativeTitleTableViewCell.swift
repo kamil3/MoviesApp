@@ -10,15 +10,23 @@ import UIKit
 
 class AlternativeTitleTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var isoNamingLabel: UILabel!
     @IBOutlet weak var isoLabel: UILabel!
+    @IBOutlet weak var typeNamingLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var alternativeTitleNamingLabel: UILabel!
     @IBOutlet weak var alternativeTitleLabel: UILabel!
+    @IBOutlet weak var typeStackView: UIStackView!
     
     func update(with alternativeTitle: AlternativeTitle) {
-        isoLabel.text = ("alternative.title.cell.iso.label".localized() + ": " + (alternativeTitle.iso31661 ?? ""))
+        isoNamingLabel.text = "alternative.title.cell.iso.naming.label".localized()
+        isoLabel.text = alternativeTitle.iso31661
+        typeNamingLabel.text = "alternative.title.cell.type.naming.label".localized()
+        typeLabel.text = alternativeTitle.type
+        alternativeTitleNamingLabel.text = "alternative.title.cell.naming.label".localized()
+        alternativeTitleLabel.text = alternativeTitle.title
         //type is often missing in response
-        typeLabel.text = ((alternativeTitle.type?.count ?? 0) > 0) ? ("alternative.title.cell.type.label".localized() + ": " + alternativeTitle.type!) : ""
-        alternativeTitleLabel.text = ("alternative.title.cell.title.label".localized() + ": " + (alternativeTitle.title ?? ""))
+        typeStackView.isHidden = ((alternativeTitle.type?.count ?? 0) == 0)
     }
 }
 
