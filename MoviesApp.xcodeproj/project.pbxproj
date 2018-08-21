@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0022780DF49A633A467FF228 /* Pods_MoviesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA241FDD809C79AF03D5D21 /* Pods_MoviesApp.framework */; };
+		4F0CEAF2212C6CCE00C2EE47 /* AlertControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CEAF1212C6CCE00C2EE47 /* AlertControllerUtils.swift */; };
 		4F6529BC211D795600E99017 /* AlternativeTitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529BB211D795600E99017 /* AlternativeTitlesViewController.swift */; };
 		4F6529BE211D797E00E99017 /* AlternativeTitlesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */; };
 		4F6529C0211D799D00E99017 /* AlternativeTitlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		432366A261CDFD8B84E26B3E /* Pods-MoviesAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoviesAppTests/Pods-MoviesAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F0CEAF1212C6CCE00C2EE47 /* AlertControllerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerUtils.swift; sourceTree = "<group>"; };
 		4F6529BB211D795600E99017 /* AlternativeTitlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeTitlesViewController.swift; sourceTree = "<group>"; };
 		4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlternativeTitlesViewController.storyboard; sourceTree = "<group>"; };
 		4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeTitlesViewModel.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		4FE3A44D211A14B5004800FB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4F0CEAF1212C6CCE00C2EE47 /* AlertControllerUtils.swift */,
 				4F6529C1211D878600E99017 /* NSObjectUtils.swift */,
 				4FB6E721211B5798003585B8 /* UITableViewUtils.swift */,
 				4F6529C3211D882900E99017 /* StoryboardUtils.swift */,
@@ -570,6 +573,7 @@
 				4FB6E711211AF4E4003585B8 /* Movie.swift in Sources */,
 				4FE3A453211A161B004800FB /* AppConfig.swift in Sources */,
 				4FB6E720211B5737003585B8 /* NibLoadableView.swift in Sources */,
+				4F0CEAF2212C6CCE00C2EE47 /* AlertControllerUtils.swift in Sources */,
 				4FBA2A07211C3FAA0046398A /* AlternativeMovieTitle.swift in Sources */,
 				4F9A80852118AB9100D53D33 /* AppDelegate.swift in Sources */,
 				4F78AB012119C2B000EE262F /* PopularMoviesViewController.swift in Sources */,
