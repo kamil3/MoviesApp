@@ -15,9 +15,13 @@ struct PopularMoviesViewModel {
     // MARK:- Outputs
     let popularMovies: Observable<[Movie]>
     let alertMessage: Observable<Error>
+    let activityIndicator: ActivityIndicator
     
     // MARK:- Init
     init(with dependencies: Dependencies) {
+        let _activityIndicator = ActivityIndicator()
+        self.activityIndicator = _activityIndicator
+        
         let _alertMessage = PublishSubject<Error>()
         self.alertMessage = _alertMessage.asObservable()
         
@@ -53,6 +57,7 @@ struct PopularMoviesViewModel {
         
         self.popularMovies = _popularMovies
             .concat(updatedPopularMovies) //reloading data on every update
+            .trackActivity(_activityIndicator)
             .catchError { error in
                 _alertMessage.onNext(error)
                 return Observable.just([])

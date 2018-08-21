@@ -80,6 +80,10 @@ class PopularMoviesViewController: UIViewController {
                 self?.dismiss(animated: true, completion: nil)
             })
             .disposed(by: rx.disposeBag)
+        
+        viewModel.activityIndicator.asDriver()
+            .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
+            .disposed(by: rx.disposeBag)
     }
 }
 
