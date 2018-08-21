@@ -32,7 +32,7 @@ class PopularMoviesViewController: UIViewController {
     
     // MARK:- Private
     private func setupUI() {
-        title = "popular.movies.title".localized()
+        title = "tab.bar.item.1".localized()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         tableView.tableFooterView = UIView()
@@ -73,7 +73,7 @@ class PopularMoviesViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .flatMap { [weak self] error -> Observable<Void> in
                 guard let strongSelf = self else { return Observable.empty() }
-                return strongSelf.alertSignal(title: "Error", message: error.localizedDescription)
+                return strongSelf.alertSignal(title: "error.text".localized(), message: error.localizedDescription)
                                  .take(3.0, scheduler: MainScheduler.instance)
             }
             .subscribe(onDisposed: { [weak self] in

@@ -18,3 +18,8 @@
 /* TAB BAR */
 "tab.bar.item.0" = "Top Rated";
 "tab.bar.item.1" = "Popular";
+
+/* ALTERNATIVE TITLES */
+"alternative.title.cell.iso.naming.label" = "Country: ";
+"alternative.title.cell.type.naming.label" = "Type: ";
+"alternative.title.cell.naming.label" = "Alternative title: ";
