@@ -38,6 +38,7 @@ class AlternativeTitlesViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.register(AlternativeTitleTableViewCell.self)
         Style.defaultBackgroundViewStyle.apply(to: tableView)
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     private func setupBindings() {
