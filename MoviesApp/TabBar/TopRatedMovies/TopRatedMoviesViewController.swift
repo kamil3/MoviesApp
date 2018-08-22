@@ -7,16 +7,38 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TopRatedMoviesViewController: UIViewController {
+    
+    // MARK:- Outlets
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK:- Properties
     var viewModel: TopRatedMoviesViewModel!
 
+    // MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        collectionView.rx.setDelegate(self)
+            .disposed(by: rx.disposeBag)
+        setupUI()
+    }
+    
+    private func setupUI() {
+        title = "tab.bar.item.0".localized()
+        collectionView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 10, right: 15)
+        collectionView.register(TopRatedMovieCollectionViewCell.self)
+        Style.defaultBackgroundViewStyle.apply(to: collectionView)
     }
 
+}
+
+extension TopRatedMoviesViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+        return CGSize(width: itemSize, height: 1.5 * itemSize)
+    }
 }

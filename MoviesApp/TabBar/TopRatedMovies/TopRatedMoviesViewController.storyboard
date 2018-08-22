@@ -16,14 +16,45 @@
                     <view key="view" contentMode="scaleToFill" id="OgA-pp-slM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C8j-di-wVq">
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tbu-3W-arG">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Hl5-zh-79T" customClass="TopRatedMovieCollectionViewCell" customModule="MoviesApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C8j-di-wVq" firstAttribute="top" secondItem="vcD-vf-UXW" secondAttribute="top" id="Gon-wM-Iox"/>
+                            <constraint firstItem="C8j-di-wVq" firstAttribute="leading" secondItem="vcD-vf-UXW" secondAttribute="leading" id="VBp-6V-37r"/>
+                            <constraint firstItem="C8j-di-wVq" firstAttribute="bottom" secondItem="vcD-vf-UXW" secondAttribute="bottom" id="lqf-TW-RBh"/>
+                            <constraint firstItem="C8j-di-wVq" firstAttribute="trailing" secondItem="vcD-vf-UXW" secondAttribute="trailing" id="zaR-jp-MYH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vcD-vf-UXW"/>
                     </view>
                     <navigationItem key="navigationItem" id="1ff-rd-VbQ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="C8j-di-wVq" id="sYz-v9-1eA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIr-dU-2kR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="175"/>
+            <point key="canvasLocation" x="1013.6" y="174.96251874062969"/>
         </scene>
         <!--Top Rated-->
         <scene sceneID="yS7-pY-EoD">
@@ -32,8 +63,8 @@
                     <tabBarItem key="tabBarItem" title="Top Rated" image="top_rated" selectedImage="top_rated" id="qQ9-dH-DjC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yMR-S1-wmq">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="yMR-S1-wmq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
