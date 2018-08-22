@@ -23,3 +23,7 @@
 "alternative.title.cell.iso.naming.label" = "Country: ";
 "alternative.title.cell.type.naming.label" = "Type: ";
 "alternative.title.cell.naming.label" = "Alternative title: ";
+
+/* TOP RATED MOVIES */
+"top.rated.movies.cell.vote.count.naming.label" = "Votes count";
+"top.rated.movies.cell.vote.average.naming.label" = "Average rate";
