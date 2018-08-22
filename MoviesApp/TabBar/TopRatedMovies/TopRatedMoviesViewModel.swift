@@ -6,11 +6,33 @@
 //  Copyright © 2018 kamil. All rights reserved.
 //
 
+import RxSwift
+import Action
+
 struct TopRatedMoviesViewModel {
     typealias Dependencies = HasMovieServiceProtocol
-    let dependencies: Dependencies
+    
+    // MARK:- Outputs
+    let topRatedMovies: Observable<[Movie]>
+    let alertMessage: Observable<Error>
+    let activityIndicator: ActivityIndicator
     
     init(with dependencies: Dependencies) {
-        self.dependencies = dependencies
+        let _activityIndicator = ActivityIndicator()
+        self.activityIndicator = _activityIndicator
+        
+        let _alertMessage = PublishSubject<Error>()
+        self.alertMessage = _alertMessage.asObservable()
+        
+        self.topRatedMovies =
+            dependencies.movieService.topRatedMovies()
+                .map { paginatedMovie -> [Movie] in
+                    return paginatedMovie.results ?? []
+                }
+                .trackActivity(_activityIndicator)
+                .catchError { error in
+                    _alertMessage.onNext(error)
+                    return Observable.empty()
+        }
     }
 }
