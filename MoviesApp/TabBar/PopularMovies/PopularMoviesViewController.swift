@@ -37,6 +37,7 @@ class PopularMoviesViewController: UIViewController {
         tableView.estimatedRowHeight = 150
         tableView.tableFooterView = UIView()
         tableView.register(PopularMovieTableViewCell.self)
+        Style.defaultBackgroundViewStyle.apply(to: tableView)
     }
 
     private func setupBindings() {
