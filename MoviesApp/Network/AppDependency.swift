@@ -10,6 +10,11 @@ protocol HasMovieServiceProtocol {
     var movieService: MovieServiceProtocol { get }
 }
 
-struct AppDependency: HasMovieServiceProtocol {
+protocol HasRxReachabilityServiceProtocol {
+    var rxReachabilitySerivce: RxReachabilitySerivceProtocol { get }
+}
+
+struct AppDependency: HasMovieServiceProtocol, HasRxReachabilityServiceProtocol {
     let movieService: MovieServiceProtocol
+    let rxReachabilitySerivce: RxReachabilitySerivceProtocol
 }

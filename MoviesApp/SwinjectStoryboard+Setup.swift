@@ -16,7 +16,7 @@ extension SwinjectStoryboard {
         
         //APP DEPENDENCIES CONTAINER
         defaultContainer.register(AppDependency.self) { r in
-            return AppDependency(movieService: r.resolve(MovieServiceProtocol.self)!)
+            return AppDependency(movieService: r.resolve(MovieServiceProtocol.self)!, rxReachabilitySerivce: r.resolve(RxReachabilitySerivceProtocol.self)!)
         }
         
         //CORE COMPONENTS
@@ -38,6 +38,11 @@ extension SwinjectStoryboard {
         /* MovieService */
         defaultContainer.register(MovieServiceProtocol.self) { r in
             return MovieService(with: r.resolve(ApiClientProtocol.self)!)
+        }
+        
+        /* RxReachabilityService */
+        defaultContainer.register(RxReachabilitySerivceProtocol.self) { r in
+            return RxReachabilitySerivce()
         }
         
         //VIEW CONTROLLERS + VIEW MODELS
