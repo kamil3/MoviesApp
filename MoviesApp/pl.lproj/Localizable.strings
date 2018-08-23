@@ -27,3 +27,5 @@
 /* TOP RATED MOVIES */
 "top.rated.movies.cell.vote.count.naming.label" = "Liczba głosów: ";
 "top.rated.movies.cell.vote.average.naming.label" = "Średnia ocena: ";
+"top.rated.movies.segmented.control.rate" = "Ocena";
+"top.rated.movies.segmented.control.votes" = "Liczba głosów";

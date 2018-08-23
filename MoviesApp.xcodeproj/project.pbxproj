@@ -12,6 +12,7 @@
 		4F0CEAF4212C7F3600C2EE47 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CEAF3212C7F3400C2EE47 /* ActivityIndicator.swift */; };
 		4F0CEAFF212C897900C2EE47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F0CEB01212C897900C2EE47 /* Localizable.strings */; };
 		4F64EC93212EC9850074A5CC /* AlertMessageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC92212EC9850074A5CC /* AlertMessageProtocol.swift */; };
+		4F64EC96212EF95D0074A5CC /* SortingMoviesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC95212EF95D0074A5CC /* SortingMoviesType.swift */; };
 		4F6529BC211D795600E99017 /* AlternativeTitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529BB211D795600E99017 /* AlternativeTitlesViewController.swift */; };
 		4F6529BE211D797E00E99017 /* AlternativeTitlesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */; };
 		4F6529C0211D799D00E99017 /* AlternativeTitlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */; };
@@ -76,6 +77,7 @@
 		4F0CEB00212C897900C2EE47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F0CEB02212C897D00C2EE47 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F64EC92212EC9850074A5CC /* AlertMessageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageProtocol.swift; sourceTree = "<group>"; };
+		4F64EC95212EF95D0074A5CC /* SortingMoviesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingMoviesType.swift; sourceTree = "<group>"; };
 		4F6529BB211D795600E99017 /* AlternativeTitlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeTitlesViewController.swift; sourceTree = "<group>"; };
 		4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlternativeTitlesViewController.storyboard; sourceTree = "<group>"; };
 		4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeTitlesViewModel.swift; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4F64EC94212EF9480074A5CC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4F64EC95212EF95D0074A5CC /* SortingMoviesType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		4F6529BA211D793000E99017 /* AlternativeTitles */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +250,7 @@
 			children = (
 				4FE3A44F211A14C1004800FB /* Services */,
 				4FE3A44E211A14BB004800FB /* Network */,
+				4F64EC94212EF9480074A5CC /* Enums */,
 				4FB6E71C211B5716003585B8 /* Protocols */,
 				4FE3A44D211A14B5004800FB /* Utils */,
 				4FE3A44C211A14AF004800FB /* Model */,
@@ -613,6 +624,7 @@
 				4F6529C2211D878600E99017 /* NSObjectUtils.swift in Sources */,
 				4F6529C4211D882900E99017 /* StoryboardUtils.swift in Sources */,
 				4F0CEAF4212C7F3600C2EE47 /* ActivityIndicator.swift in Sources */,
+				4F64EC96212EF95D0074A5CC /* SortingMoviesType.swift in Sources */,
 				4FB6E71A211B1D7A003585B8 /* PopularMovieTableViewCell.swift in Sources */,
 				4FB6E711211AF4E4003585B8 /* Movie.swift in Sources */,
 				4FE3A453211A161B004800FB /* AppConfig.swift in Sources */,
