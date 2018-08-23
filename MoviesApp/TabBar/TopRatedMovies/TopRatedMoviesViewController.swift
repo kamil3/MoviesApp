@@ -45,8 +45,12 @@ class TopRatedMoviesViewController: UIViewController {
             }
             .disposed(by: rx.disposeBag)
 
+        bindErrorMessage(with: viewModel.alertMessage)
+        
+        viewModel.activityIndicator.asDriver()
+            .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
+            .disposed(by: rx.disposeBag)
     }
-
 }
 
 // MARK:- UICollectionViewDelegateFlowLayout
@@ -56,3 +60,6 @@ extension TopRatedMoviesViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: itemSize, height: 1.5 * itemSize)
     }
 }
+
+// MARK:- AlertMessageProtocol
+extension TopRatedMoviesViewController: AlertMessageProtocol {}
