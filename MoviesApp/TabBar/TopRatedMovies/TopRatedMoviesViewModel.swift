@@ -17,14 +17,20 @@ struct TopRatedMoviesViewModel {
     let alertMessage: Observable<Error>
     let activityIndicator: ActivityIndicator
     
+    // MARK:- Inputs
+    let reload: AnyObserver<Void>
+    
     init(with dependencies: Dependencies) {
+        let _reload = BehaviorSubject<Void>(value: ())
+        self.reload = _reload.asObserver()
+        
         let _activityIndicator = ActivityIndicator()
         self.activityIndicator = _activityIndicator
         
         let _alertMessage = PublishSubject<Error>()
         self.alertMessage = _alertMessage.asObservable()
         
-        self.topRatedMovies =
+        self.topRatedMovies = _reload.flatMap { _ -> Observable<[Movie]> in
             dependencies.movieService.topRatedMovies()
                 .map { paginatedMovie -> [Movie] in
                     return paginatedMovie.results ?? []
@@ -33,6 +39,7 @@ struct TopRatedMoviesViewModel {
                 .catchError { error in
                     _alertMessage.onNext(error)
                     return Observable.empty()
+            }
         }
     }
 }

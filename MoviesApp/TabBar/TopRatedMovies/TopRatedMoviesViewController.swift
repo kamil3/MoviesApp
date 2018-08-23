@@ -17,6 +17,7 @@ class TopRatedMoviesViewController: UIViewController {
     
     // MARK:- Properties
     var viewModel: TopRatedMoviesViewModel!
+    let refreshControl = UIRefreshControl()
 
     // MARK:- Lifecycle
     override func viewDidLoad() {
@@ -33,6 +34,7 @@ class TopRatedMoviesViewController: UIViewController {
         title = "tab.bar.item.0".localized()
         collectionView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 10, right: 15)
         collectionView.register(TopRatedMovieCollectionViewCell.self)
+        collectionView.refreshControl = refreshControl
         Style.defaultBackgroundViewStyle.apply(to: collectionView)
     }
     
@@ -49,6 +51,16 @@ class TopRatedMoviesViewController: UIViewController {
         
         viewModel.activityIndicator.asDriver()
             .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
+            .disposed(by: rx.disposeBag)
+        
+        refreshControl.rx.controlEvent(.valueChanged)
+            .bind(to: viewModel.reload)
+            .disposed(by: rx.disposeBag)
+        
+        viewModel.activityIndicator.asDriver()
+            .filter { !$0 }
+            .delay(0.1) //a small delay to make end refreshing more smooth
+            .drive(refreshControl.rx.isRefreshing)
             .disposed(by: rx.disposeBag)
     }
 }
