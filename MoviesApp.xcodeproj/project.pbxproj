@@ -11,6 +11,7 @@
 		4F0CEAF2212C6CCE00C2EE47 /* AlertControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CEAF1212C6CCE00C2EE47 /* AlertControllerUtils.swift */; };
 		4F0CEAF4212C7F3600C2EE47 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CEAF3212C7F3400C2EE47 /* ActivityIndicator.swift */; };
 		4F0CEAFF212C897900C2EE47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F0CEB01212C897900C2EE47 /* Localizable.strings */; };
+		4F64EC93212EC9850074A5CC /* AlertMessageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC92212EC9850074A5CC /* AlertMessageProtocol.swift */; };
 		4F6529BC211D795600E99017 /* AlternativeTitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529BB211D795600E99017 /* AlternativeTitlesViewController.swift */; };
 		4F6529BE211D797E00E99017 /* AlternativeTitlesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */; };
 		4F6529C0211D799D00E99017 /* AlternativeTitlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */; };
@@ -74,6 +75,7 @@
 		4F0CEAFE212C896F00C2EE47 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4F0CEB00212C897900C2EE47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F0CEB02212C897D00C2EE47 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4F64EC92212EC9850074A5CC /* AlertMessageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageProtocol.swift; sourceTree = "<group>"; };
 		4F6529BB211D795600E99017 /* AlternativeTitlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeTitlesViewController.swift; sourceTree = "<group>"; };
 		4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlternativeTitlesViewController.storyboard; sourceTree = "<group>"; };
 		4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeTitlesViewModel.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 		4FB6E71C211B5716003585B8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				4F64EC92212EC9850074A5CC /* AlertMessageProtocol.swift */,
 				4FB6E71F211B5737003585B8 /* NibLoadableView.swift */,
 				4FB6E71D211B5728003585B8 /* ReusableView.swift */,
 			);
@@ -618,6 +621,7 @@
 				4FDC7DF9212DEE6A0052E43D /* Constants.swift in Sources */,
 				4FBA2A07211C3FAA0046398A /* AlternativeMovieTitle.swift in Sources */,
 				4F9A80852118AB9100D53D33 /* AppDelegate.swift in Sources */,
+				4F64EC93212EC9850074A5CC /* AlertMessageProtocol.swift in Sources */,
 				4F78AB012119C2B000EE262F /* PopularMoviesViewController.swift in Sources */,
 				4FB6E716211AF79F003585B8 /* AppDependency.swift in Sources */,
 				4FE3A459211A1F8B004800FB /* RequestError.swift in Sources */,
