@@ -42,12 +42,15 @@ class TopRatedMoviesViewController: UIViewController {
     }
     
     private func setupBindings() {
-        viewModel
-            .topRatedMovies
+        viewModel.sortedMovies
             .observeOn(MainScheduler.instance)
             .bind(to: collectionView.rx.items(cellIdentifier: TopRatedMovieCollectionViewCell.reuseIdentifier, cellType: TopRatedMovieCollectionViewCell.self)) {_, movie, cell in
-                cell.update(with: movie)
-            }
+                    cell.update(with: movie)
+                }
+            .disposed(by: rx.disposeBag)
+        
+        segmentedControl.rx.selectedSegmentIndex
+            .bind(to: viewModel.selectedSegmentIndex)
             .disposed(by: rx.disposeBag)
 
         bindErrorMessage(with: viewModel.alertMessage)

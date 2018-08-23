@@ -7,18 +7,20 @@
 //
 
 import RxSwift
+import RxCocoa
 import Action
 
 struct TopRatedMoviesViewModel {
     typealias Dependencies = HasMovieServiceProtocol
     
     // MARK:- Outputs
-    let topRatedMovies: Observable<[Movie]>
+    let sortedMovies: Observable<[Movie]>
     let alertMessage: Observable<Error>
     let activityIndicator: ActivityIndicator
     
     // MARK:- Inputs
     let reload: AnyObserver<Void>
+    let selectedSegmentIndex: AnyObserver<Int>
     
     init(with dependencies: Dependencies) {
         let _reload = BehaviorSubject<Void>(value: ())
@@ -30,7 +32,10 @@ struct TopRatedMoviesViewModel {
         let _alertMessage = PublishSubject<Error>()
         self.alertMessage = _alertMessage.asObservable()
         
-        self.topRatedMovies = _reload.flatMap { _ -> Observable<[Movie]> in
+        let _selectedSegmentIndex = PublishSubject<Int>()
+        self.selectedSegmentIndex = _selectedSegmentIndex.asObserver()
+        
+        let _topRatedMovies = _reload.flatMap { _ -> Observable<[Movie]> in
             dependencies.movieService.topRatedMovies()
                 .map { paginatedMovie -> [Movie] in
                     return paginatedMovie.results ?? []
@@ -40,6 +45,19 @@ struct TopRatedMoviesViewModel {
                     _alertMessage.onNext(error)
                     return Observable.empty()
             }
+        }
+        
+        let sortingMoviesType = _selectedSegmentIndex.map { SortingMoviesType.init(rawValue: $0) ?? .rate }
+        self.sortedMovies = Observable.combineLatest(sortingMoviesType, _topRatedMovies).map { type, movies -> [Movie] in
+            let sortedMovies = movies.sorted { movie1, movie2 in
+                switch type {
+                case .rate:
+                    return movie1.voteAverage ?? 0 > movie2.voteAverage ?? 0
+                case .votes:
+                    return movie1.voteCount ?? 0 > movie2.voteCount ?? 0
+                }
+            }
+            return sortedMovies
         }
     }
 }
