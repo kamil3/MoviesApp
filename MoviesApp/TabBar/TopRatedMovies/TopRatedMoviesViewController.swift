@@ -14,6 +14,7 @@ class TopRatedMoviesViewController: UIViewController {
     
     // MARK:- Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     // MARK:- Properties
     var viewModel: TopRatedMoviesViewModel!
@@ -35,7 +36,9 @@ class TopRatedMoviesViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 10, right: 15)
         collectionView.register(TopRatedMovieCollectionViewCell.self)
         collectionView.refreshControl = refreshControl
-        Style.defaultBackgroundViewStyle.apply(to: collectionView)
+        segmentedControl.setTitle(SortingMoviesType.rate.description, forSegmentAt: SortingMoviesType.rate.rawValue)
+        segmentedControl.setTitle(SortingMoviesType.votes.description, forSegmentAt: SortingMoviesType.votes.rawValue)
+        Style.defaultBackgroundViewStyle.apply(to: collectionView, view)
     }
     
     private func setupBindings() {
