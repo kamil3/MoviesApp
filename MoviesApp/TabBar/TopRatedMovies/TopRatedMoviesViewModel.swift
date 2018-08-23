@@ -13,6 +13,8 @@ import Action
 struct TopRatedMoviesViewModel {
     typealias Dependencies = HasMovieServiceProtocol
     
+    let disposeBag = DisposeBag()
+    
     // MARK:- Outputs
     let sortedMovies: Observable<[Movie]>
     let alertMessage: Observable<Error>
@@ -21,6 +23,7 @@ struct TopRatedMoviesViewModel {
     // MARK:- Inputs
     let reload: AnyObserver<Void>
     let selectedSegmentIndex: AnyObserver<Int>
+    let searchButtonAction: Action<String?, String?>
     
     init(with dependencies: Dependencies) {
         let _reload = BehaviorSubject<Void>(value: ())
@@ -34,6 +37,17 @@ struct TopRatedMoviesViewModel {
         
         let _selectedSegmentIndex = PublishSubject<Int>()
         self.selectedSegmentIndex = _selectedSegmentIndex.asObserver()
+        
+        self.searchButtonAction = Action<String?, String?> (workFactory: { (input) in
+            return Observable.just(input)
+        })
+        
+        self.searchButtonAction.executionObservables.switchLatest().subscribe(onNext: { (movieTitle) in
+            if let title = movieTitle?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed), let url = URL(string: "https://www.google.pl/search?q=\(title)"), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        })
+            .disposed(by: disposeBag)
         
         let _topRatedMovies = _reload.flatMap { _ -> Observable<[Movie]> in
             dependencies.movieService.topRatedMovies()

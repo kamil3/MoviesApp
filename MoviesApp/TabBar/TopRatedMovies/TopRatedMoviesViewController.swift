@@ -44,8 +44,10 @@ class TopRatedMoviesViewController: UIViewController {
     private func setupBindings() {
         viewModel.sortedMovies
             .observeOn(MainScheduler.instance)
-            .bind(to: collectionView.rx.items(cellIdentifier: TopRatedMovieCollectionViewCell.reuseIdentifier, cellType: TopRatedMovieCollectionViewCell.self)) {_, movie, cell in
+            .bind(to: collectionView.rx.items(cellIdentifier: TopRatedMovieCollectionViewCell.reuseIdentifier, cellType: TopRatedMovieCollectionViewCell.self)) { [weak self] _, movie, cell in
+                    guard let strongSelf = self else { return }
                     cell.update(with: movie)
+                    cell.infoButton.rx.bind(to: strongSelf.viewModel.searchButtonAction, input: movie.title)
                 }
             .disposed(by: rx.disposeBag)
         
