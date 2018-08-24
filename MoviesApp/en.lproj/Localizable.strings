@@ -25,8 +25,8 @@
 "alternative.title.cell.naming.label" = "Alternative title: ";
 
 /* TOP RATED MOVIES */
-"top.rated.movies.cell.vote.count.naming.label" = "Votes count";
-"top.rated.movies.cell.vote.average.naming.label" = "Average rate";
+"top.rated.movies.cell.vote.count.naming.label" = "Votes count: ";
+"top.rated.movies.cell.vote.average.naming.label" = "Average rate: ";
 "top.rated.movies.segmented.control.rate" = "Rate";
 "top.rated.movies.segmented.control.votes" = "Votes";
 
