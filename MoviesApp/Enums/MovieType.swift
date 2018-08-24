@@ -6,7 +6,7 @@
 //  Copyright © 2018 kamil. All rights reserved.
 //
 
-public enum MovieType {
-    case top_rated
-    case popular
+public enum MovieType: Int {
+    case top_rated = 0
+    case popular = 1
 }
