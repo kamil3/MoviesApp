@@ -17,10 +17,12 @@ protocol MovieServiceProtocol {
 struct MovieService: MovieServiceProtocol {
     private let movieNetworkService: MovieNetworkServiceProtocol
     private let moviePersistenceManager: MoviePersistenceManagerProtocol
+    private let movieTranslationLayer: MovieTranslationLayerProtocol
     
-    init(with movieNetworkService: MovieNetworkServiceProtocol, moviePersistenceManager: MoviePersistenceManagerProtocol) {
+    init(with movieNetworkService: MovieNetworkServiceProtocol, moviePersistenceManager: MoviePersistenceManagerProtocol, movieTranslationLayer: MovieTranslationLayerProtocol) {
         self.movieNetworkService = movieNetworkService
         self.moviePersistenceManager = moviePersistenceManager
+        self.movieTranslationLayer = movieTranslationLayer
     }
     
     // MARK:- MovieServiceProtocol
@@ -32,6 +34,16 @@ struct MovieService: MovieServiceProtocol {
                     var mv = movie
                     mv.type = .top_rated
                     return mv
+                }
+            }
+            .do(onNext: { movies in
+                self.moviePersistenceManager.saveMoviesToDatabase(movies: movies)
+            })
+            .catchError { error -> Observable<[Movie]> in
+                return self.moviePersistenceManager.loadAllMovies(withType: .top_rated)
+                    .map { movieEntities in
+                        guard movieEntities.count != 0 else { throw error }
+                        return movieEntities.map(self.movieTranslationLayer.convert)
                 }
             }
     }

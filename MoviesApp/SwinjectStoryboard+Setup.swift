@@ -42,7 +42,7 @@ extension SwinjectStoryboard {
         
         /* MovieService */
         defaultContainer.register(MovieServiceProtocol.self) { r in
-            return MovieService(with: r.resolve(MovieNetworkServiceProtocol.self)!, moviePersistenceManager: r.resolve(MoviePersistenceManagerProtocol.self)!)
+            return MovieService(with: r.resolve(MovieNetworkServiceProtocol.self)!, moviePersistenceManager: r.resolve(MoviePersistenceManagerProtocol.self)!, movieTranslationLayer: r.resolve(MovieTranslationLayerProtocol.self)!)
         }
         
         /* MovieNetworkService */
