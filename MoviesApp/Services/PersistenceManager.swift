@@ -10,7 +10,6 @@ import CoreData
 
 protocol PersistenceManagerProtocol {
     var persistentContainer: NSPersistentContainer { get }
-    
     func saveContext()
 }
 
