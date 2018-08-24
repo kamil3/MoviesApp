@@ -23,7 +23,7 @@ class TopRatedMoviesViewController: UIViewController {
     // MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        _ = viewModel.dependencies.rxReachabilitySerivce.startMonitor("apple.com")
         collectionView.rx.setDelegate(self)
             .disposed(by: rx.disposeBag)
         setupUI()

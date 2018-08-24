@@ -11,8 +11,9 @@ import RxCocoa
 import Action
 
 struct TopRatedMoviesViewModel {
-    typealias Dependencies = HasMovieServiceProtocol
+    typealias Dependencies = HasMovieServiceProtocol & HasRxReachabilityServiceProtocol
     
+    let dependencies: Dependencies
     let disposeBag = DisposeBag()
     
     // MARK:- Outputs
@@ -26,6 +27,8 @@ struct TopRatedMoviesViewModel {
     let searchButtonAction: Action<String?, String?>
     
     init(with dependencies: Dependencies) {
+        self.dependencies = dependencies
+        
         let _reload = BehaviorSubject<Void>(value: ())
         self.reload = _reload.asObserver()
         
