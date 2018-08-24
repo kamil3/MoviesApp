@@ -15,6 +15,7 @@
 		4F64EC96212EF95D0074A5CC /* SortingMoviesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC95212EF95D0074A5CC /* SortingMoviesType.swift */; };
 		4F64EC9A212F40780074A5CC /* RxReachabilitySerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC99212F40750074A5CC /* RxReachabilitySerivce.swift */; };
 		4F64EC9C213031700074A5CC /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC9B213031700074A5CC /* PersistenceManager.swift */; };
+		4F64ECA021303B3B0074A5CC /* MovieType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC9F21303B3B0074A5CC /* MovieType.swift */; };
 		4F6529BC211D795600E99017 /* AlternativeTitlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529BB211D795600E99017 /* AlternativeTitlesViewController.swift */; };
 		4F6529BE211D797E00E99017 /* AlternativeTitlesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */; };
 		4F6529C0211D799D00E99017 /* AlternativeTitlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */; };
@@ -82,6 +83,7 @@
 		4F64EC95212EF95D0074A5CC /* SortingMoviesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingMoviesType.swift; sourceTree = "<group>"; };
 		4F64EC99212F40750074A5CC /* RxReachabilitySerivce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReachabilitySerivce.swift; sourceTree = "<group>"; };
 		4F64EC9B213031700074A5CC /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		4F64EC9F21303B3B0074A5CC /* MovieType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieType.swift; sourceTree = "<group>"; };
 		4F6529BB211D795600E99017 /* AlternativeTitlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeTitlesViewController.swift; sourceTree = "<group>"; };
 		4F6529BD211D797E00E99017 /* AlternativeTitlesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlternativeTitlesViewController.storyboard; sourceTree = "<group>"; };
 		4F6529BF211D799D00E99017 /* AlternativeTitlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeTitlesViewModel.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		4F64EC94212EF9480074A5CC /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				4F64EC9F21303B3B0074A5CC /* MovieType.swift */,
 				4F64EC95212EF95D0074A5CC /* SortingMoviesType.swift */,
 			);
 			path = Enums;
@@ -618,6 +621,7 @@
 				4FE3A451211A150C004800FB /* SwinjectStoryboard+Setup.swift in Sources */,
 				4F6529CA211DC04700E99017 /* AlternativeTitleTableViewCell.swift in Sources */,
 				4F6529C0211D799D00E99017 /* AlternativeTitlesViewModel.swift in Sources */,
+				4F64ECA021303B3B0074A5CC /* MovieType.swift in Sources */,
 				4FDC7DF7212DE6130052E43D /* CollectionViewUtils.swift in Sources */,
 				4FB6E70E211ADB96003585B8 /* TopRatedMoviesViewModel.swift in Sources */,
 				4F78AAF72119BABC00EE262F /* MainTabBarController.swift in Sources */,
