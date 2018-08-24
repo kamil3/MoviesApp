@@ -21,7 +21,7 @@ struct MovieNetworkService: MovieNetworkServiceProtocol {
         self.apiClient = apiClient
     }
     
-    // MARK:- MovieServiceProtocol
+    // MARK:- MovieNetworkServiceProtocol
     func topRatedMovies() -> Observable<PaginatedMovie> {
         let requestRoute = RequestRouter.topRatedMovies
         return apiClient.convenientRequest(for: requestRoute)

@@ -50,9 +50,14 @@ extension SwinjectStoryboard {
             return MovieNetworkService(with: r.resolve(ApiClientProtocol.self)!)
         }
         
-        /* MoviePersistence */
+        /* MoviePersistenceManager */
         defaultContainer.register(MoviePersistenceManagerProtocol.self) { r in
-            return MoviePersistenceManager(with: r.resolve(PersistenceManagerProtocol.self)!)
+            return MoviePersistenceManager(with: r.resolve(PersistenceManagerProtocol.self)!, movieTranslationLayer: r.resolve(MovieTranslationLayerProtocol.self)!)
+        }
+        
+        /* MovieTranslationLayer */
+        defaultContainer.register(MovieTranslationLayerProtocol.self) { r in
+            return MovieTranslationLayer()
         }
         
         /* RxReachabilityService */
