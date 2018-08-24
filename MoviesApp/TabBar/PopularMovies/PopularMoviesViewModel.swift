@@ -27,9 +27,6 @@ struct PopularMoviesViewModel {
         
         //Retrieve movies from first page only (pagination is not used)
         let _popularMovies = dependencies.movieService.popularMovies()
-            .map { paginatedMovie -> [Movie] in
-                return paginatedMovie.results ?? []
-            }
             .share(replay: 1, scope: .forever)
         
         let fetchedAlternativeMovieTitles = _popularMovies.flatMap { movies -> Observable<Observable<AlternativeMovieTitle>> in

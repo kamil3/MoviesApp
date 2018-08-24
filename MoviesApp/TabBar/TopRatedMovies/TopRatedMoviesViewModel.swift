@@ -54,13 +54,9 @@ struct TopRatedMoviesViewModel {
         
         let _topRatedMovies = _reload.flatMap { _ -> Observable<[Movie]> in
             dependencies.movieService.topRatedMovies()
-                .map { paginatedMovie -> [Movie] in
-                    return paginatedMovie.results ?? []
-                }
                 .trackActivity(_activityIndicator)
                 .catchError { error in
                     _alertMessage.onNext(error)
-                    //todo: return movies from core data
                     return Observable.empty()
                 }
         }

@@ -9,31 +9,46 @@
 import RxSwift
 
 protocol MovieServiceProtocol {
-    func topRatedMovies() -> Observable<PaginatedMovie>
-    func popularMovies() -> Observable<PaginatedMovie>
+    func topRatedMovies() -> Observable<[Movie]>
+    func popularMovies() -> Observable<[Movie]>
     func alternativeMovieTitles(withMovieId movieId: String) -> Observable<AlternativeMovieTitle>
 }
 
 struct MovieService: MovieServiceProtocol {
-    private let apiClient: ApiClientProtocol
+    private let movieNetworkService: MovieNetworkServiceProtocol
+    private let moviePersistenceManager: MoviePersistenceManagerProtocol
     
-    init(with apiClient: ApiClientProtocol) {
-        self.apiClient = apiClient
+    init(with movieNetworkService: MovieNetworkServiceProtocol, moviePersistenceManager: MoviePersistenceManagerProtocol) {
+        self.movieNetworkService = movieNetworkService
+        self.moviePersistenceManager = moviePersistenceManager
     }
     
     // MARK:- MovieServiceProtocol
-    func topRatedMovies() -> Observable<PaginatedMovie> {
-        let requestRoute = RequestRouter.topRatedMovies
-        return apiClient.convenientRequest(for: requestRoute)
+    func topRatedMovies() -> Observable<[Movie]> {
+        return movieNetworkService.topRatedMovies()
+            .map { paginatedMovie -> [Movie] in
+                let movies = paginatedMovie.results ?? []
+                return movies.map { movie in
+                    var mv = movie
+                    mv.type = .top_rated
+                    return mv
+                }
+            }
     }
     
-    func popularMovies() -> Observable<PaginatedMovie> {
-        let requestRoute = RequestRouter.popularMovies
-        return apiClient.convenientRequest(for: requestRoute)
+    func popularMovies() -> Observable<[Movie]> {
+        return movieNetworkService.popularMovies()
+            .map { paginatedMovie -> [Movie] in
+                let movies = paginatedMovie.results ?? []
+                return movies.map { movie in
+                    var mv = movie
+                    mv.type = .popular
+                    return mv
+                }
+        }
     }
     
     func alternativeMovieTitles(withMovieId movieId: String) -> Observable<AlternativeMovieTitle> {
-        let requestRoute = RequestRouter.alternativeTitles(movieId: movieId)
-        return apiClient.convenientRequest(for: requestRoute)
+        return movieNetworkService.alternativeMovieTitles(withMovieId: movieId)
     }
 }

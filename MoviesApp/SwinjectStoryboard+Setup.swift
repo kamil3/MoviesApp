@@ -35,9 +35,24 @@ extension SwinjectStoryboard {
             return ApiClient(sessionManager: sessionManager)
         }
         
+        /* PersistenceManager */
+        defaultContainer.register(PersistenceManagerProtocol.self) { r in
+            return PersistenceManager()
+        }
+        
         /* MovieService */
         defaultContainer.register(MovieServiceProtocol.self) { r in
-            return MovieService(with: r.resolve(ApiClientProtocol.self)!)
+            return MovieService(with: r.resolve(MovieNetworkServiceProtocol.self)!, moviePersistenceManager: r.resolve(MoviePersistenceManagerProtocol.self)!)
+        }
+        
+        /* MovieNetworkService */
+        defaultContainer.register(MovieNetworkServiceProtocol.self) { r in
+            return MovieNetworkService(with: r.resolve(ApiClientProtocol.self)!)
+        }
+        
+        /* MoviePersistence */
+        defaultContainer.register(MoviePersistenceManagerProtocol.self) { r in
+            return MoviePersistenceManager(with: r.resolve(PersistenceManagerProtocol.self)!)
         }
         
         /* RxReachabilityService */
