@@ -44,10 +44,13 @@ enum RequestRouter: URLRequestConvertible {
         let fixedParameters: [String: Any] = ["language": Locale.current.languageCode ?? "en", "api_key": RequestRouter.apiKey]
 
         switch self {
-            case .topRatedMovies, .popularMovies, .alternativeTitles:
-                urlRequest = try URLEncoding.default.encode(urlRequest, with: fixedParameters)
+            case .topRatedMovies:
+                urlRequest.cachePolicy = .reloadIgnoringCacheData
+            case .popularMovies, .alternativeTitles:
+                break
         }
         
+        urlRequest = try URLEncoding.default.encode(urlRequest, with: fixedParameters)
         return urlRequest
     }
 }
