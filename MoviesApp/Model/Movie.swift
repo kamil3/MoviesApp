@@ -48,6 +48,7 @@ public struct Movie: Mappable {
   public var adult: Bool? = false
   public var alternativeTitles = [AlternativeTitle]()
   public var type: MovieType?
+  public var imageData: Data?
 
   // MARK: ObjectMapper Initializers
   /// Map a JSON object to this class using ObjectMapper.
@@ -105,4 +106,16 @@ public struct Movie: Mappable {
     return dictionary
   }
 
+}
+
+extension Movie {
+    static func create(id: Int = 0, title: String? = "", voteCount: Int = 0, voteAverage: Float = 0.0, imageData: Data? = nil) -> Movie {
+        var movie = Movie()
+        movie.id = id
+        movie.title = title
+        movie.voteCount = voteCount
+        movie.voteAverage = voteAverage
+        movie.imageData = imageData
+        return movie
+    }
 }
