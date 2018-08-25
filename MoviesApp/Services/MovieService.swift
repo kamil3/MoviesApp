@@ -39,6 +39,7 @@ struct MovieService: MovieServiceProtocol {
             .do(onNext: { movies in
                 self.moviePersistenceManager.saveMoviesToDatabase(movies: movies)
             })
+            .observeOn(ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global()))
             .catchError { error -> Observable<[Movie]> in
                 return self.moviePersistenceManager.loadAllMovies(withType: .top_rated)
                     .map { movieEntities in
