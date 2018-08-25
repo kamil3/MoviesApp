@@ -80,7 +80,6 @@ struct TopRatedMoviesViewModel {
         
         //retry request when network is back
         dependencies.rxReachabilitySerivce.status.skip(2) //skip first and second status (1: unknown, 2: online/offline)
-            .filter { $0 == .online }
             .map { _ in }
             .bind(to: reload)
             .disposed(by: disposeBag)
