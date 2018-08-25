@@ -270,8 +270,9 @@
 				4FE3A44D211A14B5004800FB /* Utils */,
 				4FE3A44C211A14AF004800FB /* Model */,
 				4F78AAF52119BA8500EE262F /* TabBar */,
-				4FE3A450211A150C004800FB /* SwinjectStoryboard+Setup.swift */,
 				4F9A80842118AB9100D53D33 /* AppDelegate.swift */,
+				4FB6E715211AF79F003585B8 /* AppDependency.swift */,
+				4FE3A450211A150C004800FB /* SwinjectStoryboard+Setup.swift */,
 				4F9A808E2118AB9400D53D33 /* Assets.xcassets */,
 				4F9A80902118AB9400D53D33 /* LaunchScreen.storyboard */,
 				4F9A80932118AB9400D53D33 /* Info.plist */,
@@ -350,7 +351,6 @@
 			children = (
 				4FE3A454211A1915004800FB /* ApiClient.swift */,
 				4FE3A452211A161B004800FB /* AppConfig.swift */,
-				4FB6E715211AF79F003585B8 /* AppDependency.swift */,
 				4FE3A45A211A2AC9004800FB /* MappingDataObject.swift */,
 				4FE3A458211A1F8B004800FB /* RequestError.swift */,
 				4FE3A456211A19A8004800FB /* RequestRouter.swift */,
