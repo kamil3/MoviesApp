@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import RxSwift
+import SwinjectStoryboard
 
 protocol MoviePersistenceManagerProtocol {
     func saveMoviesToDatabase(movies: [Movie])
@@ -27,20 +28,26 @@ struct MoviePersistenceManager: MoviePersistenceManagerProtocol {
     // MARK:- MoviePersistenceManagerProtocol
     func saveMoviesToDatabase(movies: [Movie]) {
         for movie in movies {
-            self.persistenceManager.persistentContainer.performBackgroundTask { context in
-                var movieEntity: MovieEntity?
-                guard let id = movie.id else { return }
-                if let entity = self.loadMovie(withId: id, context: context) {
-                    movieEntity = self.movieTranslationLayer.convert(movie: movie, movieEntity: entity, context: context)
-                } else {
-                    movieEntity = self.movieTranslationLayer.convert(movie: movie, movieEntity: nil, context: context)
+            let imageURLString = SwinjectStoryboard.defaultContainer.resolve(AppConfig.self)!.imagesURL
+            guard let imageUrl = URL(string: "\(imageURLString)\(ImageSizeConstants.TopRatedSize)/\(movie.posterPath!)") else { return }
+            URLSession.shared.dataTask(with: imageUrl, completionHandler: { (data, response, error) in
+                self.persistenceManager.persistentContainer.performBackgroundTask { context in
+                    var movieEntity: MovieEntity?
+                    guard let id = movie.id else { return }
+                    if let entity = self.loadMovie(withId: id, context: context) {
+                        movieEntity = self.movieTranslationLayer.convert(movie: movie, movieEntity: entity, context: context)
+                    } else {
+                        movieEntity = self.movieTranslationLayer.convert(movie: movie, movieEntity: nil, context: context)
+                    }
+                    movieEntity?.imageData = data
+                    do {
+                        try context.save()
+                    } catch (let error) {
+                        print(error)
+                    }
                 }
-                do {
-                    try context.save()
-                } catch (let error) {
-                    print(error)
-                }
-            }
+            })
+                .resume()
         }
     }
     

@@ -31,7 +31,15 @@ class TopRatedMovieCollectionViewCell: UICollectionViewCell {
     
     func update(with movie: Movie) {
         let imageUrl: URL? = (movie.posterPath != nil) ? URL(string: "\(TopRatedMovieCollectionViewCell.imageURLString)\(ImageSizeConstants.TopRatedSize)/\(movie.posterPath!)") : nil
-        imageView.kf.setImage(with: imageUrl)
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(with: imageUrl, placeholder: nil, options: [.transition(.fade(0.2))], progressBlock: nil) { [weak self] (image, error, _, _) in
+            if error != nil, let imageData = movie.imageData, let img = UIImage.init(data: imageData) {
+                self?.imageView.image = img
+                if let imgUrl = imageUrl {
+                    ImageCache.default.store(img, forKey: imgUrl.absoluteString)
+                }
+            }
+        }
         movieTitleLabel.text = movie.title
         voteCountNamingLabel.text = "top.rated.movies.cell.vote.count.naming.label".localized()
         voteCountLabel.text = movie.voteCount.asStringOrEmpty()

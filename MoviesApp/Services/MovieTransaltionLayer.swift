@@ -20,7 +20,6 @@ struct MovieTranslationLayer: MovieTranslationLayerProtocol {
         entity.title = movie.title
         entity.posterPath = movie.posterPath
         entity.voteAverage = movie.voteAverage ?? 0.0
-        entity.imageData = movie.imageData
         
         if let id = movie.id {
             entity.id = Int64(id)
