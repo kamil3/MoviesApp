@@ -18,6 +18,7 @@ struct MovieTranslationLayer: MovieTranslationLayerProtocol {
     func convert(movie: Movie, context: NSManagedObjectContext) -> MovieEntity {
         let entity = MovieEntity(context: context)
         entity.title = movie.title
+        entity.posterPath = movie.posterPath
         entity.voteAverage = movie.voteAverage ?? 0.0
         entity.imageData = movie.imageData
         
@@ -41,6 +42,7 @@ struct MovieTranslationLayer: MovieTranslationLayerProtocol {
                                  title: entity.title,
                                  voteCount: Int(entity.voteCount),
                                  voteAverage: entity.voteAverage,
+                                 posterPath: entity.posterPath,
                                  imageData: entity.imageData)
         return movie
     }

@@ -109,12 +109,13 @@ public struct Movie: Mappable {
 }
 
 extension Movie {
-    static func create(id: Int = 0, title: String? = "", voteCount: Int = 0, voteAverage: Float = 0.0, imageData: Data? = nil) -> Movie {
+    static func create(id: Int = 0, title: String? = "", voteCount: Int = 0, voteAverage: Float = 0.0, posterPath: String? = "", imageData: Data? = nil) -> Movie {
         var movie = Movie()
         movie.id = id
         movie.title = title
         movie.voteCount = voteCount
         movie.voteAverage = voteAverage
+        movie.posterPath = posterPath
         movie.imageData = imageData
         return movie
     }
