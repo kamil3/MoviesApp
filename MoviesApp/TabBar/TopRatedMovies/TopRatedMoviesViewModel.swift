@@ -66,7 +66,11 @@ struct TopRatedMoviesViewModel {
             let sortedMovies = movies.sorted { movie1, movie2 in
                 switch type {
                 case .rate:
-                    return movie1.voteAverage ?? 0 > movie2.voteAverage ?? 0
+                    if movie1.voteAverage == movie2.voteAverage {
+                        return movie1.voteCount ?? 0 > movie2.voteCount ?? 0
+                    } else {
+                        return movie1.voteAverage ?? 0 > movie2.voteAverage ?? 0
+                    }
                 case .votes:
                     return movie1.voteCount ?? 0 > movie2.voteCount ?? 0
                 }
