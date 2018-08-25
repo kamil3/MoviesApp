@@ -9,14 +9,14 @@
 import CoreData
 
 protocol MovieTranslationLayerProtocol {
-    func convert(movie: Movie, context: NSManagedObjectContext) -> MovieEntity
+    func convert(movie: Movie, movieEntity: MovieEntity?, context: NSManagedObjectContext) -> MovieEntity
     func convert(entity: MovieEntity) -> Movie
 }
 
 struct MovieTranslationLayer: MovieTranslationLayerProtocol {
     // MARK:- MovieTransaltionLayerProtocol
-    func convert(movie: Movie, context: NSManagedObjectContext) -> MovieEntity {
-        let entity = MovieEntity(context: context)
+    func convert(movie: Movie, movieEntity: MovieEntity? = nil, context: NSManagedObjectContext) -> MovieEntity {
+        let entity = movieEntity ?? MovieEntity(context: context)
         entity.title = movie.title
         entity.posterPath = movie.posterPath
         entity.voteAverage = movie.voteAverage ?? 0.0
