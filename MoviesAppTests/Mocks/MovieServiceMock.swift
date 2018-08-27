@@ -10,8 +10,8 @@ import RxSwift
 @testable import MoviesApp
 
 class MovieServiceMock: MovieServiceProtocol {
-    var moviesReturnValue: Observable<[Movie]> = .empty()
-    var alternativeMovieTitlesReturnValue: Observable<AlternativeMovieTitle> = .empty()
+    var moviesReturnValue: Observable<[Movie]> = .never()
+    var alternativeMovieTitlesReturnValue: Observable<AlternativeMovieTitle> = .never()
     
     func topRatedMovies() -> Observable<[Movie]> {
         return moviesReturnValue

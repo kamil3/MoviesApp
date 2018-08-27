@@ -10,6 +10,7 @@ import XCTest
 import RxTest
 import RxSwift
 import RxCocoa
+import Action
 @testable import MoviesApp
 
 class TopRatedMoviesViewModelTests: XCTestCase {
@@ -19,13 +20,14 @@ class TopRatedMoviesViewModelTests: XCTestCase {
     var testScheduler: TestScheduler!
     var disposeBag: DisposeBag!
     let movieService = MovieServiceMock()
+    let rxReachabilitySerivce = RxReachabilityServiceMock()
     var viewModelUnderTest: TopRatedMoviesViewModel!
     
     override func setUp() {
         super.setUp()
         testScheduler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
-        let topRatedMoviesViewModelDependencies = TopRatedMoviesViewModelDependencies(movieService: movieService, rxReachabilitySerivce: RxReachabilityServiceMock())
+        let topRatedMoviesViewModelDependencies = TopRatedMoviesViewModelDependencies(movieService: movieService, rxReachabilitySerivce: rxReachabilitySerivce)
         viewModelUnderTest = TopRatedMoviesViewModel(with: topRatedMoviesViewModelDependencies)
     }
     
@@ -37,14 +39,14 @@ class TopRatedMoviesViewModelTests: XCTestCase {
     func test_topRatedMovies_returnsValidObjects() {
         movieService.moviesReturnValue = .just([topRatedMovie])
         
-        testScheduler.createHotObservable([next(300, ())])
+        testScheduler.createHotObservable([.next(300, ())])
             .bind(to: viewModelUnderTest.reload)
             .disposed(by: disposeBag)
         
-        testScheduler.createHotObservable([next(400, (0))])
+        testScheduler.createHotObservable([.next(400, (0))])
             .bind(to: viewModelUnderTest.selectedSegmentIndex)
             .disposed(by: disposeBag)
-                
+        
         let result = testScheduler.start { self.viewModelUnderTest.sortedMovies }
         XCTAssertEqual(result.events.count, 1)
         
@@ -53,6 +55,23 @@ class TopRatedMoviesViewModelTests: XCTestCase {
         }
         
         XCTAssertEqual(movie.id, 1)
+    }
+    
+    func test_topRatedMoviesWithNetworkError_emitsAlertMessage() {
+        let error = NSError(domain: "TestDomain", code: 5, userInfo: nil)
+        movieService.moviesReturnValue = .error(error)
+        
+        testScheduler.createHotObservable([.next(300, ())])
+            .bind(to: viewModelUnderTest.reload)
+            .disposed(by: disposeBag)
+        
+        viewModelUnderTest
+            .sortedMovies
+            .subscribe()
+            .disposed(by: disposeBag)
+        
+        let result = testScheduler.start { self.viewModelUnderTest.alertMessage.map { $0.localizedDescription } }
+        XCTAssertEqual(result.events, [next(300, error.localizedDescription)])
     }
 }
 
