@@ -108,6 +108,21 @@ class TopRatedMoviesViewModelTests: XCTestCase {
         let result = testScheduler.start { self.viewModelUnderTest.activityIndicator.asObservable().skip(1) }
         XCTAssertEqual(result.events, [.next(300, true), .next(300, false)])
     }
+    
+    func test_networkStatusChange_firesReloading() {
+        movieService.moviesReturnValue = .just([topRatedMovie])
+
+        testScheduler.createHotObservable([.next(400, (.unknown)), .next(410, (.offline)), .next(420, (.online)), .next(430, (.offline))])
+            .bind(to: rxReachabilitySerivce.statusReturnValue)
+            .disposed(by: disposeBag)
+        
+        testScheduler.createHotObservable([.next(300, (0))])
+            .bind(to: viewModelUnderTest.selectedSegmentIndex)
+            .disposed(by: disposeBag)
+        
+        let result = testScheduler.start { self.viewModelUnderTest.sortedMovies.map { _ in true } }
+        XCTAssertEqual(result.events, [.next(300, (true)), .next(420, (true)), .next(430, (true))]) //400 and 410 are skipped as expected
+    }
 }
 
 private struct TopRatedMoviesViewModelDependencies: HasMovieServiceProtocol, HasRxReachabilityServiceProtocol {

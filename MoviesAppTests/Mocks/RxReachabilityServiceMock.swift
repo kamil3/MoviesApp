@@ -10,10 +10,10 @@ import RxSwift
 @testable import MoviesApp
 
 class RxReachabilityServiceMock: RxReachabilitySerivceProtocol {
-    var statusReturnValue: Observable<Reachability> = .never()
+    var statusReturnValue = PublishSubject<Reachability>()
     
     var status: Observable<Reachability> {
-        return statusReturnValue
+        return statusReturnValue.asObservable()
     }
     
     func startMonitor(_ host: String) -> Bool {
