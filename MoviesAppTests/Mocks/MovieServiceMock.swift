@@ -9,7 +9,7 @@
 import RxSwift
 @testable import MoviesApp
 
-struct MovieServiceMock: MovieServiceProtocol {
+class MovieServiceMock: MovieServiceProtocol {
     var moviesReturnValue: Observable<[Movie]> = .empty()
     var alternativeMovieTitlesReturnValue: Observable<AlternativeMovieTitle> = .empty()
     
