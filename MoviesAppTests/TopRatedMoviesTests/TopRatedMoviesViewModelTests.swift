@@ -73,6 +73,24 @@ class TopRatedMoviesViewModelTests: XCTestCase {
         let result = testScheduler.start { self.viewModelUnderTest.alertMessage.map { $0.localizedDescription } }
         XCTAssertEqual(result.events, [next(300, error.localizedDescription)])
     }
+    
+    func test_searchButtonAction_emitsValidOutput() {
+        let button = UIButton()
+        button.rx.bind(to: viewModelUnderTest.searchButtonAction, input: "Test")
+        var output: String!
+        
+        viewModelUnderTest
+            .searchButtonAction
+            .executionObservables
+            .switchLatest()
+            .subscribe(onNext: { (textOutput) in
+                output = textOutput
+            })
+            .disposed(by: disposeBag)
+        
+        button.sendActions(for: .touchUpInside)
+        XCTAssertEqual(output, "Test")
+    }
 }
 
 private struct TopRatedMoviesViewModelDependencies: HasMovieServiceProtocol, HasRxReachabilityServiceProtocol {
