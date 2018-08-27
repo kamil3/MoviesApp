@@ -33,6 +33,12 @@ class TopRatedMoviesViewController: UIViewController {
     // MARK:- Private
     private func setupUI() {
         title = "tab.bar.item.0".localized()
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
         collectionView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 10, right: 15)
         collectionView.register(TopRatedMovieCollectionViewCell.self)
         collectionView.refreshControl = refreshControl
