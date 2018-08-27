@@ -17,15 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wRY-7p-rJG">
-                                <rect key="frame" x="127" y="131" width="121" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C8j-di-wVq">
-                                <rect key="frame" x="0.0" y="167" width="375" height="451"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tbu-3W-arG">
                                     <size key="itemSize" width="50" height="50"/>
@@ -47,16 +40,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wRY-7p-rJG" firstAttribute="centerX" secondItem="OgA-pp-slM" secondAttribute="centerX" id="Gjt-mq-4Li"/>
-                            <constraint firstItem="C8j-di-wVq" firstAttribute="top" secondItem="wRY-7p-rJG" secondAttribute="bottom" constant="8" id="Q3m-hV-L3B"/>
+                            <constraint firstItem="C8j-di-wVq" firstAttribute="top" secondItem="vcD-vf-UXW" secondAttribute="top" id="Lio-pn-BHE"/>
                             <constraint firstItem="C8j-di-wVq" firstAttribute="leading" secondItem="vcD-vf-UXW" secondAttribute="leading" id="VBp-6V-37r"/>
-                            <constraint firstItem="wRY-7p-rJG" firstAttribute="top" secondItem="vcD-vf-UXW" secondAttribute="top" constant="15" id="VIH-tF-Lqu"/>
                             <constraint firstItem="C8j-di-wVq" firstAttribute="bottom" secondItem="vcD-vf-UXW" secondAttribute="bottom" id="lqf-TW-RBh"/>
                             <constraint firstItem="C8j-di-wVq" firstAttribute="trailing" secondItem="vcD-vf-UXW" secondAttribute="trailing" id="zaR-jp-MYH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vcD-vf-UXW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1ff-rd-VbQ"/>
+                    <navigationItem key="navigationItem" id="1ff-rd-VbQ">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="wRY-7p-rJG">
+                            <rect key="frame" x="77" y="7" width="221" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="C8j-di-wVq" id="sYz-v9-1eA"/>
                         <outlet property="segmentedControl" destination="wRY-7p-rJG" id="WFQ-2Z-dHJ"/>
