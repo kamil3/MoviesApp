@@ -91,6 +91,23 @@ class TopRatedMoviesViewModelTests: XCTestCase {
         button.sendActions(for: .touchUpInside)
         XCTAssertEqual(output, "Test")
     }
+    
+    func test_topRatedMovies_emitsActivityIndicator() {
+        movieService.moviesReturnValue = .just([topRatedMovie])
+        
+        testScheduler.createHotObservable([.next(300, ())])
+            .bind(to: viewModelUnderTest.reload)
+            .disposed(by: disposeBag)
+        
+        viewModelUnderTest
+            .sortedMovies
+            .subscribe()
+            .disposed(by: disposeBag)
+        
+        //skip(1) since it's BehaviorSubject and observing initial value is undesirable
+        let result = testScheduler.start { self.viewModelUnderTest.activityIndicator.asObservable().skip(1) }
+        XCTAssertEqual(result.events, [.next(300, true), .next(300, false)])
+    }
 }
 
 private struct TopRatedMoviesViewModelDependencies: HasMovieServiceProtocol, HasRxReachabilityServiceProtocol {
