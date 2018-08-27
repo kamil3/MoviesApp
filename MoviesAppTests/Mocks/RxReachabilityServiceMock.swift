@@ -10,7 +10,7 @@ import RxSwift
 @testable import MoviesApp
 
 class RxReachabilityServiceMock: RxReachabilitySerivceProtocol {
-    var statusReturnValue: Observable<Reachability> = .empty()
+    var statusReturnValue: Observable<Reachability> = .never()
     
     var status: Observable<Reachability> {
         return statusReturnValue
