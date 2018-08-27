@@ -28,6 +28,7 @@ target 'MoviesAppTests' do
     pod 'RxTest'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'Action'
 end
 
 post_install do |installer|
