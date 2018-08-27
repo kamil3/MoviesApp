@@ -6,8 +6,8 @@
 //  Copyright © 2018 kamil. All rights reserved.
 //
 
-@testable import MoviesApp
 import RxSwift
+@testable import MoviesApp
 
 struct MovieServiceMock: MovieServiceProtocol {
     var moviesReturnValue: Observable<[Movie]> = .empty()

@@ -11,6 +11,7 @@
 		4F0CEAF2212C6CCE00C2EE47 /* AlertControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CEAF1212C6CCE00C2EE47 /* AlertControllerUtils.swift */; };
 		4F0CEAF4212C7F3600C2EE47 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CEAF3212C7F3400C2EE47 /* ActivityIndicator.swift */; };
 		4F0CEAFF212C897900C2EE47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F0CEB01212C897900C2EE47 /* Localizable.strings */; };
+		4F2DC7AE2134260900BF8BA1 /* RxReachabilityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DC7AD2134260900BF8BA1 /* RxReachabilityServiceMock.swift */; };
 		4F64EC93212EC9850074A5CC /* AlertMessageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC92212EC9850074A5CC /* AlertMessageProtocol.swift */; };
 		4F64EC96212EF95D0074A5CC /* SortingMoviesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC95212EF95D0074A5CC /* SortingMoviesType.swift */; };
 		4F64EC9A212F40780074A5CC /* RxReachabilitySerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F64EC99212F40750074A5CC /* RxReachabilitySerivce.swift */; };
@@ -83,6 +84,7 @@
 		4F0CEAFE212C896F00C2EE47 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4F0CEB00212C897900C2EE47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F0CEB02212C897D00C2EE47 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4F2DC7AD2134260900BF8BA1 /* RxReachabilityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReachabilityServiceMock.swift; sourceTree = "<group>"; };
 		4F64EC92212EC9850074A5CC /* AlertMessageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageProtocol.swift; sourceTree = "<group>"; };
 		4F64EC95212EF95D0074A5CC /* SortingMoviesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingMoviesType.swift; sourceTree = "<group>"; };
 		4F64EC99212F40750074A5CC /* RxReachabilitySerivce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReachabilitySerivce.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				4FECE42A2133F03E0093710E /* MovieServiceMock.swift */,
+				4F2DC7AD2134260900BF8BA1 /* RxReachabilityServiceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2DC7AE2134260900BF8BA1 /* RxReachabilityServiceMock.swift in Sources */,
 				4FECE42B2133F03E0093710E /* MovieServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
